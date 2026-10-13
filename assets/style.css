@@ -274,3 +274,18 @@ svg .line.target { stroke: var(--green); stroke-dasharray: 5 4; stroke-width: 1.
 figure svg.fit { width: 100%; min-width: 640px; }
 .split svg, .box svg { max-width: 100%; height: auto; }
 .bmc > div { hyphens: auto; overflow-wrap: break-word; }
+
+/* ---------- Interactive Media: GenAI-blok, prompts, fasen ---------- */
+.ai { background: var(--accent-soft); border-color: transparent; border-left: 4px solid var(--accent); }
+.ai .box-title { color: var(--accent); }
+.ai .split { margin: 8px 0 12px; }
+.ai .split h4 { font-size: .95rem; }
+.ai .split ul { margin: 0; padding-left: 1.1em; font-size: .95rem; }
+.prompt { white-space: pre-wrap; font-family: var(--mono); font-size: .85rem; line-height: 1.55; background: var(--surface); border: 1px dashed var(--border); border-radius: 8px; padding: 12px 14px; margin: 8px 0 12px; }
+.sidenav li.group { margin: 14px 0 2px; padding: 0 10px; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 16px 0; }
+.phases > div { background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: var(--radius); padding: 14px 18px; }
+.phases h3 { margin: 0 0 .3em; }
+.phases p { color: var(--muted); font-size: .95rem; }
+.phases ul { margin: 0; padding-left: 1.1em; }
+@media (max-width: 760px) { .phases { grid-template-columns: 1fr; } }

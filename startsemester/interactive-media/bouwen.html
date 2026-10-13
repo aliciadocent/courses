@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bouwen in HTML &amp; CSS · Interactive Media</title>
+<meta name="description" content="Startsemester Fontys ICT · Interactive Media: wat je maakt in de fasen analyse, ontwerp en realisatie, met de rol van GenAI en een uitgewerkt voorbeeld.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><span class="logo">IM</span>Interactive Media</a>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › Interactive Media</span>
+</div></header>
+<div class="layout">
+<nav class="sidenav" aria-label="Producten"><h4>Interactive Media</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Repair Café De Schroef</span></a></li><li><a href="genai.html"><span class="num">AI</span><span>De rol van GenAI</span></a></li><li class="group">Fase: Analyse</li><li><a href="ideevorming.html"><span class="num">1</span><span>Ideevorming</span></a></li><li><a href="doelgroeponderzoek.html"><span class="num">2</span><span>Doelgroeponderzoek &amp; persona</span></a></li><li><a href="trends-technieken.html"><span class="num">3</span><span>Trends &amp; technieken</span></a></li><li><a href="concurrentieanalyse.html"><span class="num">4</span><span>Concurrentieanalyse</span></a></li><li class="group">Fase: Ontwerp</li><li><a href="schetsen-wireframes.html"><span class="num">5</span><span>Schetsen &amp; wireframes</span></a></li><li><a href="prototype.html"><span class="num">6</span><span>Prototype</span></a></li><li><a href="gebruikerstest.html"><span class="num">7</span><span>Gebruikerstest &amp; itereren</span></a></li><li class="group">Fase: Realisatie</li><li><a href="bouwen.html" class="active"><span class="num">8</span><span>Bouwen in HTML &amp; CSS</span></a></li><li><a href="testen-opleveren.html"><span class="num">9</span><span>Testen &amp; opleveren</span></a></li></ol></nav>
+<main>
+<p class="eyebrow">Fase Realisatie · Product 8 van 9</p>
+<h1>Bouwen in HTML &amp; CSS</h1>
+<p class="lead">Je getest prototype wordt een echte website. Je zet je ontwerp om in HTML voor de inhoud en structuur, en CSS voor de vormgeving.</p>
+<div class="summary">
+  <div><b>Wat is het?</b>Een werkende website, gebouwd met HTML en CSS op basis van je (verbeterde) prototype.</div>
+  <div><b>Doel</b>Je ontwerp werkelijkheid maken en leren hoe een website technisch in elkaar zit.</div>
+  <div><b>Je levert op</b>De broncode (netjes geordend), een online versie of link, en een korte uitleg van hoe je je prototype hebt vertaald naar code.</div>
+</div>
+
+<h2>Aanpak</h2>
+<ol>
+  <li><strong>Structuur eerst.</strong> Maak een map met per pagina een HTML-bestand, één CSS-bestand en een map voor afbeeldingen.</li>
+  <li><strong>Inhoud in HTML.</strong> Zet alle inhoud erin met de juiste <em>semantische</em> elementen: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;h1&gt;</code> tot <code>&lt;h3&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+  <li><strong>Vormgeving in CSS.</strong> Begin bij de kleuren en lettertypes uit je stijlgids. Gebruik CSS-variabelen, dan pas je een kleur op één plek aan.</li>
+  <li><strong>Mobile first.</strong> Bouw eerst de mobiele versie, en voeg met een <code>@media</code>-query de aanpassingen voor grotere schermen toe.</li>
+  <li><strong>Vaak controleren.</strong> Bekijk je pagina na elke stap in de browser en op je telefoon.</li>
+</ol>
+
+<h2>Doel</h2>
+<p>Pas als je ontwerp gebouwd is, kunnen gebruikers het echt gebruiken. Door zelf te bouwen leer je ook wat wel en niet makkelijk te maken is, en dat maakt je een betere ontwerper.</p>
+
+<h2>Voorbeeld</h2>
+<div class="box example"><p class="box-title">🔧 Voorbeeld De Schroef: mappenstructuur</p>
+<pre><code>de-schroef/
+├── index.html          (home)
+├── keuzehulp.html
+├── studentenavond.html
+├── hoe-werkt-het.html
+├── css/
+│   └── style.css
+└── img/
+    ├── hero-studenten.jpg
+    └── koptelefoon-voor.jpg</code></pre>
+</div>
+
+<div class="box example"><p class="box-title">🔧 Voorbeeld De Schroef: de kaart voor de studentenavond</p>
+<p>HTML:</p>
+<pre><code>&lt;section class="event"&gt;
+  &lt;p class="label"&gt;Studentenavond&lt;/p&gt;
+  &lt;h2&gt;Fix &amp;amp; Friet&lt;/h2&gt;
+  &lt;p class="date"&gt;Donderdag 5 november, 19:00 tot 22:00&lt;/p&gt;
+  &lt;p&gt;Neem je kapotte spullen mee. Repareren is gratis, de friet ook.&lt;/p&gt;
+  &lt;a class="button" href="studentenavond.html"&gt;Aanmelden&lt;/a&gt;
+&lt;/section&gt;</code></pre>
+<p>CSS, met de kleuren uit de stijlgids:</p>
+<pre><code>:root {
+  --geel: #FFC93C;
+  --blauw: #1B2A4A;
+}
+
+.event {
+  background: white;
+  border-left: 6px solid var(--geel);
+  padding: 16px;
+}
+
+.button {
+  display: inline-block;
+  min-height: 44px;          /* goed aan te tikken op mobiel */
+  padding: 12px 20px;
+  background: var(--geel);
+  color: var(--blauw);
+  border-radius: 22px;
+}
+
+/* Vanaf tablet: de kaarten naast elkaar */
+@media (min-width: 768px) {
+  .cards { display: flex; gap: 24px; }
+}</code></pre>
+</div>
+
+<div class="box ai"><p class="box-title">🤖 GenAI bij dit product</p>
+<div class="split">
+  <div><h4>Slim inzetten</h4><ul><li>Laten uitleggen wat een stuk code doet, of waarom iets niet werkt.</li><li>Een foutmelding of onverwacht resultaat laten verklaren.</li><li>Je code laten reviewen: is de HTML semantisch, kan de CSS korter?</li></ul></div>
+  <div><h4>Pas op</h4><ul><li><strong>Je moet elke regel code die je inlevert kunnen uitleggen.</strong> Kun je dat niet? Dan heb je het niet geleerd.</li><li>Laat AI geen complete pagina's schrijven om te kopiëren. Vraag om uitleg, en schrijf de code zelf.</li><li>AI-code werkt niet altijd en is soms verouderd. Test alles in de browser.</li></ul></div>
+</div>
+<p><strong>Voorbeeldprompt</strong></p>
+<div class="prompt">Ik leer HTML en CSS. Mijn twee kaarten staan onder elkaar, maar ik wil ze vanaf 768 px breed naast elkaar. Dit is mijn code: [code]. Geef me nog geen oplossing, maar leg uit waar het probleem zit en geef een hint, zodat ik het zelf kan oplossen.</div>
+<p>Leg in je <a href="genai.html#verantwoording">AI-verantwoording</a> vast wat je met AI hebt gedaan en wat je zelf hebt aangepast.</p>
+</div>
+
+<div class="box tip"><p class="box-title">💡 Laat AI je leraar zijn, niet je ghostwriter</p><p>Vraag AI om hints in plaats van oplossingen, of laat het je code uitleggen alsof je een beginner bent. Schrijf wat je leert in je eigen woorden in een logboek. Zo groeit je eigen kennis, en heb je meteen materiaal voor je AI-verantwoording.</p></div>
+
+<div class="box warn"><p class="box-title">⚠️ Veelgemaakte fouten</p><ul><li>Alles in <code>&lt;div&gt;</code>'s in plaats van semantische HTML.</li><li>Kleuren en lettertypes die afwijken van je prototype en stijlgids, zonder reden.</li><li>Alleen op een laptopscherm kijken en pas aan het eind ontdekken dat de mobiele versie niet werkt.</li><li>Code van AI of internet overnemen die je niet begrijpt.</li></ul></div>
+
+<h2>Checklist</h2>
+<ul class="checklist"><li>Mijn website is gebouwd met HTML en CSS en volgt mijn verbeterde prototype.</li><li>Mijn bestanden zijn netjes geordend en ik gebruik semantische HTML.</li><li>Mijn website werkt op mobiel en op een groter scherm.</li><li>Ik kan elke regel van mijn code uitleggen.</li></ul>
+
+<nav class="pager"><a class="prev" href="gebruikerstest.html"><small>← Vorige</small>Gebruikerstest &amp; itereren</a><a class="next" href="testen-opleveren.html"><small>Volgende →</small>Testen &amp; opleveren</a></nav>
+</main>
+</div>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Interactive Media. Repair Café De Schroef is fictief en bedoeld als voorbeeld.</div></footer>
+</body>
+</html>

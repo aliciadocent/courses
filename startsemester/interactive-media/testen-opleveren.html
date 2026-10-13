@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testen &amp; opleveren · Interactive Media</title>
+<meta name="description" content="Startsemester Fontys ICT · Interactive Media: wat je maakt in de fasen analyse, ontwerp en realisatie, met de rol van GenAI en een uitgewerkt voorbeeld.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><span class="logo">IM</span>Interactive Media</a>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › Interactive Media</span>
+</div></header>
+<div class="layout">
+<nav class="sidenav" aria-label="Producten"><h4>Interactive Media</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Repair Café De Schroef</span></a></li><li><a href="genai.html"><span class="num">AI</span><span>De rol van GenAI</span></a></li><li class="group">Fase: Analyse</li><li><a href="ideevorming.html"><span class="num">1</span><span>Ideevorming</span></a></li><li><a href="doelgroeponderzoek.html"><span class="num">2</span><span>Doelgroeponderzoek &amp; persona</span></a></li><li><a href="trends-technieken.html"><span class="num">3</span><span>Trends &amp; technieken</span></a></li><li><a href="concurrentieanalyse.html"><span class="num">4</span><span>Concurrentieanalyse</span></a></li><li class="group">Fase: Ontwerp</li><li><a href="schetsen-wireframes.html"><span class="num">5</span><span>Schetsen &amp; wireframes</span></a></li><li><a href="prototype.html"><span class="num">6</span><span>Prototype</span></a></li><li><a href="gebruikerstest.html"><span class="num">7</span><span>Gebruikerstest &amp; itereren</span></a></li><li class="group">Fase: Realisatie</li><li><a href="bouwen.html"><span class="num">8</span><span>Bouwen in HTML &amp; CSS</span></a></li><li><a href="testen-opleveren.html" class="active"><span class="num">9</span><span>Testen &amp; opleveren</span></a></li></ol></nav>
+<main>
+<p class="eyebrow">Fase Realisatie · Product 9 van 9</p>
+<h1>Testen &amp; opleveren</h1>
+<p class="lead">Je website staat. Nu controleer je of hij technisch klopt, voor iedereen bruikbaar is en doet wat je doelgroep nodig heeft. Daarna lever je op en kijk je terug op je proces.</p>
+<div class="summary">
+  <div><b>Wat is het?</b>Een laatste validatieronde van je gebouwde website, verbeteringen en een presentatie van je eindresultaat en proces.</div>
+  <div><b>Doel</b>Laten zien dat je product werkt voor je doelgroep, en reflecteren op wat je hebt geleerd.</div>
+  <div><b>Je levert op</b>Een testrapport (technisch, toegankelijkheid en gebruikerstest), de verbeterde website, je AI-verantwoording en een reflectie.</div>
+</div>
+
+<h2>Wat test je?</h2>
+<div class="table-wrap"><table><thead><tr><th>Soort test</th><th>Hoe?</th></tr></thead><tbody><tr><td>Validatie van je code</td><td>Haal je HTML en CSS door de <a href="https://validator.w3.org/">W3C Validator</a> en los de fouten op.</td></tr><tr><td>Responsive</td><td>Bekijk je site op verschillende breedtes (bijvoorbeeld 360, 768 en 1280 px) met de ontwikkelaarstools van je browser, en op je eigen telefoon.</td></tr><tr><td>Browsers</td><td>Test in minstens twee browsers, bijvoorbeeld Chrome en Safari.</td></tr><tr><td>Toegankelijkheid</td><td>Hebben afbeeldingen een <code>alt</code>-tekst? Is het contrast voldoende? Kun je alles bereiken met de Tab-toets?</td></tr><tr><td>Gebruikerstest</td><td>Laat 3 mensen uit je doelgroep dezelfde taken doen als bij je prototypetest, nu op de echte website.</td></tr></tbody></table></div>
+
+<h2>Doel</h2>
+<p>Ook in de realisatiefase valideer je: de echte website gedraagt zich anders dan een prototype. Je laat zien dat je product klaar is voor gebruik, en met je reflectie laat je zien wat je hebt geleerd en wat je de volgende keer anders doet.</p>
+
+<h2>Voorbeeld</h2>
+<div class="box example"><p class="box-title">🔧 Voorbeeld De Schroef: testresultaten</p>
+<div class="table-wrap"><table><thead><tr><th>Test</th><th>Resultaat</th><th>Actie</th></tr></thead><tbody><tr><td>W3C Validator</td><td>3 fouten: een niet-afgesloten <code>&lt;section&gt;</code> en twee keer dezelfde <code>id</code></td><td>Opgelost</td></tr><tr><td>Responsive (360 px)</td><td>Keuzehulp-tegels te smal, tekst valt eruit</td><td>Twee tegels per rij in plaats van drie</td></tr><tr><td>Contrast</td><td>Wit op geel is slecht leesbaar</td><td>Tekst op gele knoppen donkerblauw gemaakt</td></tr><tr><td>Toetsenbord</td><td>Keuzehulp-tegels niet te bereiken met Tab</td><td>Tegels zijn nu echte links (<code>&lt;a&gt;</code>)</td></tr><tr><td>Gebruikerstest (3 studenten)</td><td>Alle 3 vonden binnen een minuut uit of hun spullen te repareren waren; 2 van 3 meldden zich aan</td><td>De derde zocht naar de route; link naar route toegevoegd onder de aanmeldknop</td></tr></tbody></table></div>
+<p><strong>Reflectie (fragment):</strong> "Het grootste inzicht was dat de AI test-persona niet zag dat studenten 'gratis' niet geloven. Volgende keer test ik eerder met echte mensen. AI hielp me vooral bij het begrijpen van CSS-fouten; door om hints te vragen in plaats van oplossingen snap ik flexbox nu echt."</p>
+</div>
+
+<div class="box ai"><p class="box-title">🤖 GenAI bij dit product</p>
+<div class="split">
+  <div><h4>Slim inzetten</h4><ul><li>Een checklist laten maken voor toegankelijkheid om je eigen site langs te lopen.</li><li>Foutmeldingen uit de W3C Validator laten uitleggen.</li><li>Feedback vragen op de opzet van je reflectie (niet laten schrijven).</li></ul></div>
+  <div><h4>Pas op</h4><ul><li>Je reflectie gaat over <em>jouw</em> proces en schrijf je zelf. Een AI-reflectie is herkenbaar en zegt niets over jou.</li><li>Rond je AI-verantwoording af: zijn alle producten waarin je AI hebt gebruikt erin opgenomen?</li><li>Een AI-check vervangt de test met echte gebruikers niet.</li></ul></div>
+</div>
+<p><strong>Voorbeeldprompt</strong></p>
+<div class="prompt">Ik heb een website gebouwd voor studenten. Geef een checklist van 10 punten waarmee ik als beginner zelf de toegankelijkheid kan controleren, met per punt hoe ik het test in de browser. Gebruik eenvoudige taal.</div>
+<p>Leg in je <a href="genai.html#verantwoording">AI-verantwoording</a> vast wat je met AI hebt gedaan en wat je zelf hebt aangepast.</p>
+</div>
+
+<div class="box warn"><p class="box-title">⚠️ Veelgemaakte fouten</p><ul><li>Alleen technisch testen en niet meer met de doelgroep.</li><li>Testen en problemen opschrijven, maar ze niet oplossen.</li><li>Een reflectie die vertelt <em>wat</em> je hebt gedaan, maar niet <em>wat je hebt geleerd</em>.</li></ul></div>
+
+<h2>Checklist</h2>
+<ul class="checklist"><li>Mijn HTML en CSS zijn gevalideerd en de fouten zijn opgelost.</li><li>Mijn website werkt op mobiel, tablet en desktop, in minstens twee browsers.</li><li>Ik heb de toegankelijkheid gecontroleerd (alt-teksten, contrast, toetsenbord).</li><li>Ik heb mijn website getest met mensen uit mijn doelgroep en verbeteringen doorgevoerd.</li><li>Mijn AI-verantwoording en reflectie zijn compleet.</li></ul>
+
+<nav class="pager"><a class="prev" href="bouwen.html"><small>← Vorige</small>Bouwen in HTML &amp; CSS</a></nav>
+</main>
+</div>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Interactive Media. Repair Café De Schroef is fictief en bedoeld als voorbeeld.</div></footer>
+</body>
+</html>
