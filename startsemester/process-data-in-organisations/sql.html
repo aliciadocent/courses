@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SQL-werkplaats · Voorbereiding Process Data in Organisations</title>
+<meta name="description" content="Startsemester Fontys ICT · Voorbereiding Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><span class="logo">PD</span>Voorbereiding Process Data in Organisations</a>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+</div></header>
+<div class="layout">
+<nav class="sidenav" aria-label="Producten"><h4>Voorbereiding Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="sql.html" class="active"><span class="num">+</span><span>Extra: SQL-werkplaats</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<main>
+
+<p class="eyebrow">Extra bij product 7: Data-analyse</p>
+<h1>SQL-werkplaats</h1>
+<p class="lead">Op deze pagina installeer je een eigen database-server op je laptop, laad je de database van Fietsenwinkel De Spaak en leer je de eerste SQL-queries die je voor een data-analyse nodig hebt.</p>
+<div class="summary">
+  <div><b>Wat leer je?</b>MySQL installeren met Docker, een SQL-programma koppelen en gegevens opvragen met SELECT, WHERE, GROUP BY en JOIN.</div>
+  <div><b>Wat heb je nodig?</b>Een laptop (Windows of Mac), ongeveer 3 GB vrije ruimte en een internetverbinding.</div>
+  <div><b>Oefenbestand</b><a href="data/spaak.sql" download>spaak.sql</a> (240 kB): 820 klanten, 1.117 reparaties.</div>
+</div>
+
+<h2>Wat is een database?</h2>
+<p>Een database is een georganiseerde verzameling gegevens die je met een <strong>DBMS</strong> (Database Management System) beheert, zoals MySQL. Je kunt het vergelijken met een Excel-bestand met meerdere tabbladen, maar dan strenger en krachtiger:</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>Excel</th><th>Database (MySQL)</th></tr></thead><tbody><tr><td>Structuur</td><td>Vrij: je typt wat je wilt in elke cel</td><td>Vast: elke kolom heeft een datatype (getal, tekst, datum)</td></tr><tr><td>Hoeveelheid</td><td>Wordt traag bij honderdduizenden rijen</td><td>Miljoenen rijen zijn geen probleem</td></tr><tr><td>Samenhang</td><td>Verwijzingen tussen tabbladen gaan makkelijk stuk</td><td>Relaties worden bewaakt met sleutels (PK en FK)</td></tr><tr><td>Meerdere gebruikers</td><td>Lastig tegelijk te bewerken</td><td>Gemaakt om door veel gebruikers en apps tegelijk te gebruiken</td></tr><tr><td>Vragen stellen</td><td>Filters, formules, draaitabellen</td><td>SQL-queries</td></tr></tbody></table></div>
+<p><strong>SQL</strong> (Structured Query Language) is de taal waarmee je een relationele database aanstuurt: tabellen met rijen en kolommen die aan elkaar gekoppeld zijn. Er bestaan ook <strong>NoSQL</strong>-databases (zoals MongoDB) die gegevens als documenten opslaan, maar in dit topic werk je met SQL.</p>
+
+<h2>Stap 1: Docker Desktop installeren</h2>
+<p>We draaien MySQL in <strong>Docker</strong>. Docker zet software in een afgesloten "container", zodat je MySQL niet zelf hoeft te installeren en het op elke laptop hetzelfde werkt.</p>
+<ol>
+  <li>Download <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener">Docker Desktop</a> en installeer het.
+    <ul>
+      <li><strong>Windows:</strong> laat de optie <em>Use WSL 2</em> aangevinkt. Krijg je een melding over WSL? Open PowerShell als administrator, voer <code>wsl --install</code> (of <code>wsl --update</code>) uit en herstart je laptop.</li>
+      <li><strong>Mac:</strong> kies de versie voor <em>Apple Silicon</em> (M1 t/m M4) of <em>Intel</em>. Welke je hebt, zie je via het Apple-menu → Over deze Mac.</li>
+    </ul>
+  </li>
+  <li>Start Docker Desktop en wacht tot het walvisje aangeeft dat Docker draait.</li>
+  <li>Controleer in een terminal (Mac) of PowerShell (Windows) of het werkt:
+<pre><code>docker run hello-world</code></pre>
+  Zie je <em>Hello from Docker!</em>? Dan werkt het.</li>
+</ol>
+
+<h2>Stap 2: MySQL starten</h2>
+<p>Download eerst het MySQL-<em>image</em>. De tag <code>lts</code> staat voor <em>long term support</em>: de stabiele versie.</p>
+<pre><code>docker pull mysql:lts</code></pre>
+<p>Start daarna een <em>container</em> met de naam <code>mysql-db</code> en het wachtwoord <code>welkom</code>:</p>
+<pre><code>docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=welkom -p 3306:3306 -d mysql:lts</code></pre>
+<div class="table-wrap"><table><thead><tr><th>Onderdeel</th><th>Betekenis</th></tr></thead><tbody><tr><td><code>--name mysql-db</code></td><td>De naam van je container, zodat je hem later terugvindt.</td></tr><tr><td><code>-e MYSQL_ROOT_PASSWORD=welkom</code></td><td>Het wachtwoord van de beheerder (<code>root</code>).</td></tr><tr><td><code>-p 3306:3306</code></td><td>Maakt poort 3306 van de container bereikbaar op je laptop.</td></tr><tr><td><code>-d</code></td><td>Draait de container op de achtergrond.</td></tr></tbody></table></div>
+<div class="box tip"><p class="box-title">💡 Image en container</p><p>Een <strong>image</strong> is het recept, een <strong>container</strong> is het gerecht dat je ermee maakt. Je downloadt het image één keer en kunt er containers mee starten.</p></div>
+<h3>Handige commando's</h3>
+<div class="table-wrap"><table><thead><tr><th>Commando</th><th>Wat het doet</th></tr></thead><tbody><tr><td><code>docker ps</code></td><td>Laat zien welke containers draaien.</td></tr><tr><td><code>docker stop mysql-db</code></td><td>Zet MySQL stil. Je gegevens blijven bewaard.</td></tr><tr><td><code>docker start mysql-db</code></td><td>Start MySQL weer op, bijvoorbeeld na een herstart van je laptop.</td></tr><tr><td><code>docker exec -it mysql-db mysql -u root -p</code></td><td>Opent MySQL direct in de terminal.</td></tr></tbody></table></div>
+<div class="box warn"><p class="box-title">⚠️ Let op</p><ul><li><code>docker rm mysql-db</code> verwijdert de container <strong>en alle databases erin</strong>.</li><li>Krijg je een foutmelding dat poort 3306 al in gebruik is (bijvoorbeeld door XAMPP)? Gebruik dan <code>-p 3307:3306</code> en vul straks poort 3307 in.</li></ul></div>
+
+<h2>Stap 3: Een SQL-programma installeren</h2>
+<p>Je kunt SQL in de terminal typen, maar met een SQL-programma zie je je tabellen en resultaten veel overzichtelijker. Kies er één:</p>
+<div class="table-wrap"><table><thead><tr><th>Programma</th><th>Kenmerken</th></tr></thead><tbody><tr><td><a href="https://dbeaver.io/download/" target="_blank" rel="noopener">DBeaver Community</a> <span class="tag could">aanbevolen</span></td><td>Gratis, open source, Windows/Mac/Linux, werkt met bijna elke database.</td></tr><tr><td><a href="https://dev.mysql.com/downloads/workbench/" target="_blank" rel="noopener">MySQL Workbench</a></td><td>Van Oracle, de makers van MySQL. Alleen voor MySQL.</td></tr><tr><td><a href="https://www.beekeeperstudio.io/get-community" target="_blank" rel="noopener">Beekeeper Studio Community</a></td><td>Gratis, open source, eenvoudig en modern.</td></tr></tbody></table></div>
+<p>Maak een nieuwe verbinding (in DBeaver: <em>Database → New Database Connection → MySQL</em>) met deze instellingen:</p>
+<div class="table-wrap"><table><thead><tr><th>Instelling</th><th>Waarde</th></tr></thead><tbody><tr><td>Host</td><td><code>localhost</code></td></tr><tr><td>Port</td><td><code>3306</code> (of <code>3307</code>)</td></tr><tr><td>Username</td><td><code>root</code></td></tr><tr><td>Password</td><td><code>welkom</code></td></tr></tbody></table></div>
+<div class="box tip"><p class="box-title">💡 Bekende foutmeldingen</p><ul><li><strong>DBeaver: <em>Public Key Retrieval is not allowed</em>.</strong> Ga naar <em>Driver properties</em> en zet <code>allowPublicKeyRetrieval</code> op <code>TRUE</code>.</li><li><strong>Workbench: waarschuwing over een niet-ondersteunde serverversie.</strong> Klik op <em>Continue anyway</em>; het werkt gewoon.</li></ul></div>
+
+<h2>Stap 4: De database van De Spaak laden</h2>
+<ol>
+  <li>Download <a href="data/spaak.sql" download><strong>spaak.sql</strong></a>.</li>
+  <li>Open het bestand in je SQL-programma (in DBeaver: <em>File → Open File</em>, en kies je verbinding).</li>
+  <li>Voer het <strong>hele script in één keer</strong> uit, niet regel voor regel. In DBeaver is dat <em>Execute SQL Script</em> (<kbd>Alt</kbd>+<kbd>X</kbd>, op de Mac <kbd>⌥</kbd>+<kbd>X</kbd>). In Workbench is dat het bliksem-icoon.</li>
+  <li>Ververs de lijst met databases. Je ziet nu de database <code>spaak</code> met zeven tabellen.</li>
+</ol>
+<p>De tabellen volgen het <a href="datamodel.html">datamodel van De Spaak</a>: <code>klant</code>, <code>fiets</code>, <code>monteur</code>, <code>reparatie</code>, <code>onderdeel</code>, <code>leverancier</code> en de koppeltabel <code>reparatie_onderdeel</code>. Het script begint met <code>DROP DATABASE IF EXISTS spaak</code>, dus je kunt het opnieuw uitvoeren als je de database kapot hebt gemaakt.</p>
+<pre><code>USE spaak;
+SHOW TABLES;</code></pre>
+
+<h2>SQL als taal</h2>
+<p>SQL is een <strong>declaratieve</strong> taal: je beschrijft <em>wat</em> je wilt hebben, en de database bepaalt zelf <em>hoe</em> hij dat ophaalt. SQL-opdrachten vallen in twee groepen:</p>
+<div class="table-wrap"><table><thead><tr><th>Groep</th><th>Opdrachten</th><th>Waarvoor</th></tr></thead><tbody><tr><td>DDL (Data Definition Language)</td><td><code>CREATE</code>, <code>ALTER</code>, <code>DROP</code></td><td>De structuur bouwen: databases en tabellen.</td></tr><tr><td>DML (Data Manipulation Language)</td><td><code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></td><td>Werken met de gegevens zelf.</td></tr></tbody></table></div>
+<p>Spelregels:</p>
+<ul>
+  <li>Sluit elke opdracht af met een puntkomma <code>;</code>.</li>
+  <li>Schrijf SQL-woorden in hoofdletters (<code>SELECT</code>, <code>FROM</code>). Dat is niet verplicht, maar wel afspraak, en het leest makkelijker.</li>
+  <li>Zet tekst en datums tussen enkele aanhalingstekens: <code>'e-bike'</code>, <code>'2026-03-01'</code>. Datums schrijf je als <code>jjjj-mm-dd</code>.</li>
+  <li>Gebruik geen spaties in namen van tabellen of kolommen, maar een underscore: <code>datum_binnen</code>.</li>
+</ul>
+<p>De onderdelen van een <code>SELECT</code> hebben een <strong>vaste volgorde</strong>. Je mag onderdelen weglaten, maar niet omdraaien:</p>
+<pre><code>SELECT   kolommen          -- wat wil je zien?
+FROM     tabel             -- waar komt het vandaan?
+WHERE    voorwaarde        -- welke rijen?
+GROUP BY kolom             -- samenvatten per groep
+ORDER BY kolom            -- sorteren
+LIMIT    aantal;           -- hoeveel rijen?</code></pre>
+
+<h2>Oefenen met De Spaak</h2>
+<p>Hieronder bouw je stap voor stap de analyse op die op de pagina <a href="data-analyse.html">Data-analyse</a> staat. Typ de queries zelf over in plaats van ze te kopiëren; zo onthoud je ze beter.</p>
+
+<h3>1. Gegevens bekijken: SELECT</h3>
+<p>Met <code>SELECT *</code> haal je alle kolommen op. <code>LIMIT</code> zorgt dat je niet alle 820 klanten in één keer krijgt.</p>
+<pre><code>SELECT * FROM klant LIMIT 5;</code></pre><p class="result-label">Resultaat</p><div class="table-wrap"><table><thead><tr><th class="n">klant_id</th><th>naam</th><th class="n">telefoon</th><th>email</th></tr></thead><tbody><tr><td class="n">1</td><td>Noah Jansen</td><td class="n">0615590624</td><td>noah.jansen3@example.nl</td></tr><tr><td class="n">2</td><td>Daan van Beek</td><td class="n">0687441289</td><td>daan.vanbeek15@example.nl</td></tr><tr><td class="n">3</td><td>Julia Bakker</td><td class="n">0680016289</td><td>julia.bakker95@example.nl</td></tr><tr><td class="n">4</td><td>Jesse de Boer</td><td class="n">0684421661</td><td>jesse.deboer16@example.nl</td></tr><tr><td class="n">5</td><td>Noor Dekker</td><td class="n">0668603935</td><td>noor.dekker76@example.nl</td></tr></tbody></table></div>
+
+<h3>2. Rijen filteren: WHERE en NULL</h3>
+<p>Welke reparaties zijn nog niet klaar? Bij een lopende reparatie is <code>datum_klaar</code> leeg: in SQL heet dat <code>NULL</code>. Op <code>NULL</code> controleer je met <code>IS NULL</code>, niet met <code>= NULL</code>.</p>
+<pre><code>SELECT reparatie_id, omschrijving, status, datum_beloofd
+FROM reparatie
+WHERE datum_klaar IS NULL
+ORDER BY datum_beloofd, reparatie_id
+LIMIT 5;</code></pre><p class="result-label">Resultaat</p><div class="table-wrap"><table><thead><tr><th class="n">reparatie_id</th><th>omschrijving</th><th>status</th><th>datum_beloofd</th></tr></thead><tbody><tr><td class="n">1083</td><td>Versnelling slipt</td><td>wacht op onderdeel</td><td>2026-08-21</td></tr><tr><td class="n">1101</td><td>Accu laadt niet volledig</td><td>wacht op onderdeel</td><td>2026-08-21</td></tr><tr><td class="n">1111</td><td>Kleine onderhoudsbeurt</td><td>in behandeling</td><td>2026-08-21</td></tr><tr><td class="n">1077</td><td>Accu laadt niet volledig</td><td>in behandeling</td><td>2026-08-22</td></tr><tr><td class="n">1090</td><td>Accu laadt niet volledig</td><td>in behandeling</td><td>2026-08-22</td></tr></tbody></table></div>
+
+<h3>3. Tellen per groep: GROUP BY</h3>
+<pre><code>SELECT status, COUNT(*) AS aantal
+FROM reparatie
+GROUP BY status;</code></pre><p class="result-label">Resultaat</p><div class="table-wrap"><table><thead><tr><th>status</th><th class="n">aantal</th></tr></thead><tbody><tr><td>in behandeling</td><td class="n">30</td></tr><tr><td>opgehaald</td><td class="n">1076</td></tr><tr><td>wacht op onderdeel</td><td class="n">11</td></tr></tbody></table></div><p>Met <code>AS</code> geef je een kolom een duidelijke naam. 1.076 reparaties zijn afgerond; dat zijn de reparaties waarmee we verder rekenen.</p>
+
+<h3>4. Rekenen: doorlooptijd en te laat</h3>
+<p><code>DATEDIFF(a, b)</code> geeft het aantal dagen tussen twee datums. De vergelijking <code>datum_klaar &gt; datum_beloofd</code> geeft <code>1</code> (waar) of <code>0</code> (niet waar), dus het gemiddelde daarvan is het aandeel reparaties dat te laat was.</p>
+<pre><code>SELECT COUNT(*)                                            AS aantal,
+       ROUND(AVG(DATEDIFF(datum_klaar, datum_binnen)), 1)  AS gem_doorlooptijd,
+       ROUND(AVG(datum_klaar &gt; datum_beloofd) * 100)       AS pct_te_laat
+FROM reparatie
+WHERE datum_klaar IS NOT NULL;</code></pre><p class="result-label">Resultaat</p><div class="table-wrap"><table><thead><tr><th class="n">aantal</th><th class="n">gem_doorlooptijd</th><th class="n">pct_te_laat</th></tr></thead><tbody><tr><td class="n">1076</td><td class="n">6.2</td><td class="n">38</td></tr></tbody></table></div>
+
+<h3>5. Tabellen koppelen: JOIN</h3>
+<p>Of een fiets een e-bike is, staat niet in <code>reparatie</code> maar in <code>fiets</code>. Met een <code>JOIN</code> koppel je de tabellen via de sleutel <code>fiets_id</code>. De letters <code>r</code> en <code>f</code> zijn afkortingen (aliassen) voor de tabelnamen.</p>
+<pre><code>SELECT f.is_ebike,
+       COUNT(*)                                     AS aantal,
+       ROUND(AVG(r.datum_klaar &gt; r.datum_beloofd) * 100) AS pct_te_laat
+FROM reparatie r
+JOIN fiets f ON f.fiets_id = r.fiets_id
+WHERE r.datum_klaar IS NOT NULL
+GROUP BY f.is_ebike;</code></pre><p class="result-label">Resultaat</p><div class="table-wrap"><table><thead><tr><th class="n">is_ebike</th><th class="n">aantal</th><th class="n">pct_te_laat</th></tr></thead><tbody><tr><td class="n">0</td><td class="n">488</td><td class="n">20</td></tr><tr><td class="n">1</td><td class="n">588</td><td class="n">53</td></tr></tbody></table></div><p><code>is_ebike = 1</code> betekent e-bike. E-bikes zijn ruim 2,5 keer zo vaak te laat als gewone fietsen.</p>
+
+<h3>6. De kernvraag: wachten op onderdelen</h3>
+<p>Een reparatie heeft "op een onderdeel gewacht" als er in <code>reparatie_onderdeel</code> een regel is met een <code>besteld_op</code>-datum. Dat controleer je met <code>EXISTS</code> en een <strong>subquery</strong>: een query binnen een query. <code>CASE</code> maakt er een leesbaar label van.</p>
+<pre><code>SELECT CASE
+         WHEN EXISTS (SELECT 1
+                      FROM reparatie_onderdeel ro
+                      WHERE ro.reparatie_id = r.reparatie_id
+                        AND ro.besteld_op IS NOT NULL)
+         THEN &#x27;besteld&#x27;
+         ELSE &#x27;op voorraad&#x27;
+       END                                                AS onderdeel,
+       COUNT(*)                                           AS aantal,
+       ROUND(AVG(DATEDIFF(datum_klaar, datum_binnen)), 1) AS gem_doorlooptijd,
+       ROUND(AVG(datum_klaar &gt; datum_beloofd) * 100)      AS pct_te_laat
+FROM reparatie r
+WHERE datum_klaar IS NOT NULL
+GROUP BY onderdeel;</code></pre><p class="result-label">Resultaat</p><div class="table-wrap"><table><thead><tr><th>onderdeel</th><th class="n">aantal</th><th class="n">gem_doorlooptijd</th><th class="n">pct_te_laat</th></tr></thead><tbody><tr><td>besteld</td><td class="n">444</td><td class="n">10.7</td><td class="n">68</td></tr><tr><td>op voorraad</td><td class="n">632</td><td class="n">3.1</td><td class="n">17</td></tr></tbody></table></div><p>Dit is de onderbouwing van de grondoorzaak uit de probleemanalyse: als er een onderdeel besteld moet worden, duurt een reparatie ruim drie keer zo lang en is die in twee derde van de gevallen te laat.</p>
+
+<h3>7. Welke onderdelen zorgen voor vertraging?</h3>
+<pre><code>SELECT o.naam,
+       COUNT(*)                                               AS keer_besteld,
+       ROUND(AVG(DATEDIFF(ro.geleverd_op, ro.besteld_op)), 1) AS gem_levertijd
+FROM reparatie_onderdeel ro
+JOIN onderdeel o ON o.onderdeel_id = ro.onderdeel_id
+WHERE ro.besteld_op IS NOT NULL
+GROUP BY o.naam
+ORDER BY keer_besteld DESC
+LIMIT 5;</code></pre><p class="result-label">Resultaat</p><div class="table-wrap"><table><thead><tr><th>naam</th><th class="n">keer_besteld</th><th class="n">gem_levertijd</th></tr></thead><tbody><tr><td>Derailleur Shimano Nexus</td><td class="n">72</td><td class="n">3.9</td></tr><tr><td>Snelheidssensor e-bike</td><td class="n">65</td><td class="n">6.3</td></tr><tr><td>Display e-bike</td><td class="n">61</td><td class="n">6.1</td></tr><tr><td>Naafdynamo</td><td class="n">58</td><td class="n">3.9</td></tr><tr><td>Laadpoort e-bike</td><td class="n">54</td><td class="n">6.6</td></tr></tbody></table></div><p>Met deze lijst kan Sanne beslissen welke onderdelen ze voortaan op voorraad legt.</p>
+
+<h2>Zelf proberen</h2>
+<div class="box"><p class="box-title">✏️ Opdracht 1</p><p>Hoeveel klanten hebben meer dan één fiets? Tip: gebruik <code>GROUP BY</code> met <code>HAVING</code>; dat is een <code>WHERE</code> voor groepen.</p><details><summary>Bekijk het antwoord</summary><pre><code>SELECT COUNT(*) AS klanten_met_meer_fietsen
+FROM (SELECT klant_id
+      FROM fiets
+      GROUP BY klant_id
+      HAVING COUNT(*) &gt; 1) AS x;</code></pre><div class="table-wrap"><table><thead><tr><th>klanten_met_meer_fietsen</th></tr></thead><tbody><tr><td>133</td></tr></tbody></table></div><p>De binnenste query geeft alle klanten met meer dan één fiets; de buitenste telt ze.</p></details></div>
+<div class="box"><p class="box-title">✏️ Opdracht 2</p><p>Welke onderdelen zijn op dit moment niet op voorraad?</p><details><summary>Bekijk het antwoord</summary><pre><code>SELECT naam, voorraad
+FROM onderdeel
+WHERE voorraad = 0
+ORDER BY naam;</code></pre><div class="table-wrap"><table><thead><tr><th>naam</th><th>voorraad</th></tr></thead><tbody><tr><td>Accu 500Wh</td><td>0</td></tr><tr><td>Derailleur Shimano Nexus</td><td>0</td></tr><tr><td>Display e-bike</td><td>0</td></tr><tr><td>Laadpoort e-bike</td><td>0</td></tr><tr><td>Middenmotor revisie-kit</td><td>0</td></tr><tr><td>Naafdynamo</td><td>0</td></tr><tr><td>Remblokken schijfrem e-bike</td><td>0</td></tr><tr><td>Snelheidssensor e-bike</td><td>0</td></tr></tbody></table></div><p>Vergelijk dit met query 7: precies de onderdelen die vaak besteld moeten worden, liggen niet op voorraad.</p></details></div>
+<div class="box"><p class="box-title">✏️ Opdracht 3</p><p>Welke monteur heeft de langste gemiddelde doorlooptijd? En is dat eerlijk? Kijk ook naar het aandeel e-bikes per monteur.</p><details><summary>Bekijk het antwoord</summary><pre><code>SELECT m.naam,
+       COUNT(*)                                             AS reparaties,
+       ROUND(AVG(DATEDIFF(r.datum_klaar, r.datum_binnen)), 1) AS gem_doorlooptijd,
+       ROUND(AVG(f.is_ebike) * 100)                          AS pct_ebike
+FROM reparatie r
+JOIN monteur m ON m.monteur_id = r.monteur_id
+JOIN fiets f   ON f.fiets_id = r.fiets_id
+WHERE r.datum_klaar IS NOT NULL
+GROUP BY m.naam
+ORDER BY gem_doorlooptijd DESC;</code></pre><div class="table-wrap"><table><thead><tr><th>naam</th><th>reparaties</th><th>gem_doorlooptijd</th><th>pct_ebike</th></tr></thead><tbody><tr><td>Ahmed El Amrani</td><td>538</td><td>7.0</td><td>72</td></tr><tr><td>Femke Kok</td><td>269</td><td>5.7</td><td>37</td></tr><tr><td>Joost Hermans</td><td>269</td><td>5.4</td><td>37</td></tr></tbody></table></div><p>Ahmed lijkt de traagste, maar hij is de e-bike-specialist en krijgt de meeste e-bikes, die vaker op onderdelen wachten. Een mooi voorbeeld van samenhang die geen oorzaak is: trek niet te snel conclusies over personen.</p></details></div>
+<div class="box"><p class="box-title">✏️ Opdracht 4</p><p>Hoe ontwikkelt het percentage te late reparaties zich per maand?</p><details><summary>Bekijk het antwoord</summary><pre><code>SELECT DATE_FORMAT(datum_binnen, &#x27;%Y-%m&#x27;)           AS maand,
+       COUNT(*)                                     AS aantal,
+       ROUND(AVG(datum_klaar &gt; datum_beloofd) * 100) AS pct_te_laat
+FROM reparatie
+WHERE datum_klaar IS NOT NULL
+GROUP BY maand
+ORDER BY maand;</code></pre><div class="table-wrap"><table><thead><tr><th>maand</th><th>aantal</th><th>pct_te_laat</th></tr></thead><tbody><tr><td>2026-03</td><td>213</td><td>39</td></tr><tr><td>2026-04</td><td>188</td><td>30</td></tr><tr><td>2026-05</td><td>212</td><td>37</td></tr><tr><td>2026-06</td><td>211</td><td>39</td></tr><tr><td>2026-07</td><td>213</td><td>41</td></tr><tr><td>2026-08</td><td>39</td><td>51</td></tr></tbody></table></div><p>Augustus telt minder reparaties omdat de reparaties van eind augustus nog niet klaar zijn. Let op zulke effecten voordat je conclusies trekt.</p></details></div>
+
+<h2>Verder leren</h2>
+<p>Wil je verder met SQL, bijvoorbeeld zelf tabellen maken (<code>CREATE</code>, <code>INSERT</code>), gegevens aanpassen (<code>UPDATE</code>, <code>DELETE</code>), met meer JOINs werken of je database koppelen aan een app in C# of Python? Ga dan verder in de uitgebreide <a href="https://business-five-eta.vercel.app/datamodelling.html" target="_blank" rel="noopener">SQL Werkplaats</a>.</p>
+
+<h2>Checklist</h2>
+<ul class="checklist"><li>Docker Desktop draait en <code>docker ps</code> laat de container <code>mysql-db</code> zien.</li><li>Mijn SQL-programma is verbonden met MySQL.</li><li>De database <code>spaak</code> is geladen en heeft zeven tabellen.</li><li>Ik kan uitleggen wat <code>WHERE</code>, <code>GROUP BY</code> en <code>JOIN</code> doen.</li><li>Ik heb de vier opdrachten zelf gemaakt voordat ik de antwoorden bekeek.</li></ul>
+
+<nav class="pager"><a class="prev" href="data-analyse.html"><small>← Vorige</small>Data-analyse</a><a class="next" href="dashboard.html"><small>Volgende →</small>Dashboard & datavisualisatie</a></nav>
+</main>
+</div>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Voorbereiding Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+</body>
+</html>
