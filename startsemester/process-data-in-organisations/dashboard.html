@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard & datavisualisatie · Process Data in Organisations</title>
+<meta name="description" content="Startsemester Fontys ICT · Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><span class="logo">PD</span>Process Data in Organisations</a>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+</div></header>
+<div class="layout">
+<nav class="sidenav" aria-label="Producten"><h4>Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="dashboard.html" class="active"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<main>
+<p class="eyebrow">Product 8 van 8</p>
+<h1>Dashboard &amp; datavisualisatie</h1>
+<p class="lead">Een dashboard laat in één oogopslag zien hoe een proces presteert. Het maakt de inzichten uit je data-analyse bruikbaar voor de mensen die beslissingen nemen.</p>
+<div class="summary">
+  <div><b>Wat is het?</b>Een visueel overzicht van de belangrijkste cijfers (KPI's) voor een specifieke doelgroep.</div>
+  <div><b>Doel</b>De organisatie laten zien hoe het proces presteert, zodat ze kunnen bijsturen en kunnen zien of verbeteringen werken.</div>
+  <div><b>Je levert op</b>Een dashboard (bijv. in Power BI of Excel) met KPI's en grafieken, en een toelichting op je keuzes.</div>
+</div>
+<h2>Wat is een dashboard?</h2>
+<p>Een dashboard is een overzicht van de belangrijkste cijfers, gemaakt voor een specifieke gebruiker. De kern is de <strong>KPI (Key Performance Indicator)</strong>: een meetbaar getal dat laat zien of een doel wordt gehaald. Een goed dashboard beantwoordt drie vragen:</p>
+<ol>
+  <li><strong>Hoe gaat het?</strong> De KPI's, vergeleken met het doel.</li>
+  <li><strong>Hoe ontwikkelt het zich?</strong> Een trend over de tijd.</li>
+  <li><strong>Waar komt het door?</strong> Een uitsplitsing naar oorzaak, categorie of medewerker.</li>
+</ol>
+
+<h3>De juiste grafiek kiezen</h3>
+<div class="table-wrap"><table><thead><tr><th>Wat wil je laten zien?</th><th>Grafiek</th></tr></thead><tbody><tr><td>Eén belangrijk getal</td><td>KPI-tegel, met het doel of de verandering erbij</td></tr><tr><td>Ontwikkeling over tijd</td><td>Lijngrafiek</td></tr><tr><td>Categorieën vergelijken</td><td>Staafdiagram (liggend als de labels lang zijn)</td></tr><tr><td>Verdeling over twee variabelen</td><td>Spreidingsdiagram</td></tr><tr><td>Details opzoeken</td><td>Tabel, onderaan of op een aparte pagina</td></tr></tbody></table></div>
+<p>Taartdiagrammen zijn alleen geschikt bij twee of drie categorieën; in alle andere gevallen is een staafdiagram makkelijker te lezen.</p>
+
+<h2>Doel</h2>
+<p>Met het dashboard maak je je werk blijvend bruikbaar. De data-analyse is een momentopname; een dashboard laat ook volgende week en volgende maand zien of het proces beter wordt. Het sluit de cirkel: de KPI's komen uit je business requirements, de data uit je datamodel.</p>
+
+<h2>Voorbeeld</h2>
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: dashboard werkplaats</p>
+<p>Doelgroep: <strong>Sanne (eigenaar)</strong> en de monteurs. Sanne bekijkt het elke maandagochtend; de monteurs zien het op een scherm in de werkplaats.</p>
+<div class="box" style="background: var(--bg)">
+  <p class="box-title">Werkplaats De Spaak · week 38</p>
+  <div class="kpis">
+    <div class="kpi"><div class="label">Gem. doorlooptijd</div><div class="value">5,6 d</div><div class="delta down">doel 3,0 d</div></div>
+    <div class="kpi"><div class="label">Op tijd klaar</div><div class="value">64%</div><div class="delta down">doel 90%</div></div>
+    <div class="kpi"><div class="label">In behandeling</div><div class="value">31</div><div class="delta">fietsen</div></div>
+    <div class="kpi"><div class="label">Wacht op onderdeel</div><div class="value">12</div><div class="delta down">39% van de lopende reparaties</div></div>
+  </div>
+  <div class="split">
+    <div><h4>Doorlooptijd per week (dagen)</h4><svg viewBox="0 0 520 230" width="520" height="230" role="img" aria-label="Gemiddelde doorlooptijd per week" xmlns="http://www.w3.org/2000/svg"><line x1="40" x2="506" y1="200.0" y2="200.0" class="grid"/><text x="34" y="204.0" font-size="11" text-anchor="end" class="muted">0</text><line x1="40" x2="506" y1="154.0" y2="154.0" class="grid"/><text x="34" y="158.0" font-size="11" text-anchor="end" class="muted">2</text><line x1="40" x2="506" y1="108.0" y2="108.0" class="grid"/><text x="34" y="112.0" font-size="11" text-anchor="end" class="muted">4</text><line x1="40" x2="506" y1="62.0" y2="62.0" class="grid"/><text x="34" y="66.0" font-size="11" text-anchor="end" class="muted">6</text><line x1="40" x2="506" y1="16.0" y2="16.0" class="grid"/><text x="34" y="20.0" font-size="11" text-anchor="end" class="muted">8</text><line x1="40" x2="506" y1="131.0" y2="131.0" class="line target"/><text x="506" y="125.0" font-size="11" text-anchor="end" class="muted">doel: 3 dagen</text><polyline points="40.0,43.6 82.4,50.5 124.7,36.7 167.1,52.8 209.5,41.3 251.8,57.4 294.2,48.2 336.5,64.3 378.9,55.1 421.3,66.6 463.6,62.0 506.0,71.2" class="line"/><circle cx="40.0" cy="43.6" r="3.5" class="bar"/><circle cx="82.4" cy="50.5" r="3.5" class="bar"/><circle cx="124.7" cy="36.7" r="3.5" class="bar"/><circle cx="167.1" cy="52.8" r="3.5" class="bar"/><circle cx="209.5" cy="41.3" r="3.5" class="bar"/><circle cx="251.8" cy="57.4" r="3.5" class="bar"/><circle cx="294.2" cy="48.2" r="3.5" class="bar"/><circle cx="336.5" cy="64.3" r="3.5" class="bar"/><circle cx="378.9" cy="55.1" r="3.5" class="bar"/><circle cx="421.3" cy="66.6" r="3.5" class="bar"/><circle cx="463.6" cy="62.0" r="3.5" class="bar"/><circle cx="506.0" cy="71.2" r="3.5" class="bar"/><text x="40.0" y="220" font-size="11" text-anchor="middle" class="muted">wk 27</text><text x="124.7" y="220" font-size="11" text-anchor="middle" class="muted">wk 29</text><text x="209.5" y="220" font-size="11" text-anchor="middle" class="muted">wk 31</text><text x="294.2" y="220" font-size="11" text-anchor="middle" class="muted">wk 33</text><text x="378.9" y="220" font-size="11" text-anchor="middle" class="muted">wk 35</text><text x="463.6" y="220" font-size="11" text-anchor="middle" class="muted">wk 37</text></svg></div>
+    <div><h4>Reden van vertraging (% van te late reparaties)</h4><svg viewBox="0 0 420 230" width="420" height="230" role="img" aria-label="Reden van vertraging" xmlns="http://www.w3.org/2000/svg"><line x1="40" x2="410" y1="184.0" y2="184.0" class="grid"/><text x="34" y="188.0" font-size="11" text-anchor="end" class="muted">0</text><line x1="40" x2="410" y1="142.0" y2="142.0" class="grid"/><text x="34" y="146.0" font-size="11" text-anchor="end" class="muted">22</text><line x1="40" x2="410" y1="100.0" y2="100.0" class="grid"/><text x="34" y="104.0" font-size="11" text-anchor="end" class="muted">45</text><line x1="40" x2="410" y1="58.0" y2="58.0" class="grid"/><text x="34" y="62.0" font-size="11" text-anchor="end" class="muted">68</text><line x1="40" x2="410" y1="16.0" y2="16.0" class="grid"/><text x="34" y="20.0" font-size="11" text-anchor="end" class="muted">90</text><rect x="56.6" y="45.9" width="59.2" height="138.1" rx="3" class="bar alt"/><text x="86.2" y="40.9" font-size="11" text-anchor="middle" font-weight="600">74%</text><text x="86.25" y="199.0" font-size="11" text-anchor="middle" class="muted"><tspan x="86.25" dy="0.0">Wacht op</tspan><tspan x="86.25" dy="13.8">onderdeel</tspan></text><rect x="149.2" y="157.9" width="59.2" height="26.1" rx="3" class="bar"/><text x="178.8" y="152.9" font-size="11" text-anchor="middle" font-weight="600">14%</text><text x="178.75" y="199.0" font-size="11" text-anchor="middle" class="muted"><tspan x="178.75" dy="0.0">Werkplaats</tspan><tspan x="178.75" dy="13.8">te druk</tspan></text><rect x="241.7" y="169.1" width="59.2" height="14.9" rx="3" class="bar"/><text x="271.2" y="164.1" font-size="11" text-anchor="middle" font-weight="600">8%</text><text x="271.25" y="199.0" font-size="11" text-anchor="middle" class="muted"><tspan x="271.25" dy="0.0">Klant niet</tspan><tspan x="271.25" dy="13.8">bereikbaar</tspan></text><rect x="334.1" y="176.5" width="59.2" height="7.5" rx="3" class="bar"/><text x="363.8" y="171.5" font-size="11" text-anchor="middle" font-weight="600">4%</text><text x="363.75" y="205.8" font-size="11" text-anchor="middle" class="muted"><tspan x="363.75" dy="0.0">Overig</tspan></text></svg></div>
+  </div>
+</div>
+<p><strong>Toelichting op de keuzes:</strong></p>
+<ul>
+  <li>De KPI's komen rechtstreeks uit de business requirements (BR1: 90% op tijd).</li>
+  <li>Bij elke KPI staat het doel, zodat je direct ziet of het goed gaat. Rood betekent: doel niet gehaald.</li>
+  <li>De lijngrafiek met doellijn laat zien of de verbeteringen effect hebben.</li>
+  <li>De staafdiagram met de belangrijkste reden in een opvallende kleur laat zien waar Sanne moet ingrijpen.</li>
+  <li>Bewust weggelaten: omzet en verkoopcijfers. Die horen bij een ander doel en zouden afleiden.</li>
+</ul>
+</div>
+
+<div class="box tip"><p class="box-title">💡 Ontwerpprincipes</p><ul><li><strong>Ken je doelgroep:</strong> een eigenaar wil andere dingen zien dan een monteur.</li><li><strong>Minder is meer:</strong> 3 tot 5 KPI's, niet 20.</li><li><strong>Belangrijkste linksboven:</strong> daar kijkt iedereen het eerst.</li><li><strong>Kleur met betekenis:</strong> gebruik opvallende kleuren alleen om iets te markeren.</li><li><strong>Test het:</strong> laat het dashboard aan een gebruiker zien en vraag wat hij eruit haalt.</li></ul></div>
+
+<div class="box warn"><p class="box-title">⚠️ Veelgemaakte fouten</p><ul><li>Alles laten zien wat er in de data zit.</li><li>KPI's zonder doel of vergelijking: is 64% goed of slecht?</li><li>3D-grafieken, te veel kleuren of grafieken zonder titel en eenheid.</li><li>Geen uitleg bij de keuzes in je verslag.</li></ul></div>
+
+<h2>Checklist</h2>
+<ul class="checklist"><li>Ik weet voor wie het dashboard is en welke beslissingen die persoon ermee neemt.</li><li>Mijn KPI's sluiten aan bij de business requirements en hebben een doel.</li><li>Ik heb voor elke vraag de juiste grafiek gekozen.</li><li>Mijn dashboard is overzichtelijk: titels, eenheden en weinig ruis.</li><li>Ik heb het dashboard getest met een gebruiker en mijn keuzes toegelicht.</li></ul>
+
+<nav class="pager"><a class="prev" href="data-analyse.html"><small>← Vorige</small>Data-analyse</a></nav>
+</main>
+</div>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+</body>
+</html>

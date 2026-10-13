@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Probleemanalyse · Process Data in Organisations</title>
+<meta name="description" content="Startsemester Fontys ICT · Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><span class="logo">PD</span>Process Data in Organisations</a>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+</div></header>
+<div class="layout">
+<nav class="sidenav" aria-label="Producten"><h4>Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html" class="active"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<main>
+<p class="eyebrow">Product 1 van 8</p>
+<h1>Probleemanalyse</h1>
+<p class="lead">Een opdrachtgever vertelt je meestal een <em>symptoom</em>: "klanten zijn ontevreden". Met een probleemanalyse zoek je uit wat het échte probleem is en wat de grondoorzaak is.</p>
+<div class="summary">
+  <div><b>Wat is het?</b>Een onderzoek naar het probleem achter de vraag van de opdrachtgever, met een heldere probleemstelling als resultaat.</div>
+  <div><b>Doel</b>Voorkomen dat je een oplossing bouwt voor het verkeerde probleem.</div>
+  <div><b>Je levert op</b>Probleemstelling, uitgewerkte 5x Waarom en/of 6W-analyse, onderbouwing met feiten.</div>
+</div>
+<h2>Wat is een probleemanalyse?</h2>
+<p>Een probleem is het verschil tussen de <strong>huidige situatie</strong> en de <strong>gewenste situatie</strong>. In een probleemanalyse maak je beide situaties concreet en zoek je uit wat de oorzaak van dat verschil is. Belangrijk is het onderscheid tussen:</p>
+<ul>
+  <li><strong>Symptoom</strong>: wat je ziet of hoort ("klanten bellen veel").</li>
+  <li><strong>Oorzaak</strong>: waardoor dat gebeurt ("klanten weten niet wanneer hun fiets klaar is").</li>
+  <li><strong>Grondoorzaak</strong>: de diepste oorzaak waar je iets aan kunt doen ("bij de intake wordt niet gekeken welke onderdelen nodig zijn").</li>
+</ul>
+
+<h2>Doel</h2>
+<p>Als je alleen het symptoom aanpakt (bijvoorbeeld een extra medewerker voor de telefoon), komt het probleem steeds terug. Een goede probleemanalyse zorgt ervoor dat je oplossing en alle producten die volgen (proces, requirements, data) over het juiste probleem gaan.</p>
+
+<h2>Methodes</h2>
+<h3>5x Waarom</h3>
+<p>Je stelt steeds opnieuw de vraag "waarom?" op het vorige antwoord, tot je bij een oorzaak komt waar je iets aan kunt doen. Vijf keer is een richtlijn, geen regel. Tips:</p>
+<ol>
+  <li><strong>Blijf objectief</strong>: baseer antwoorden op feiten en observaties, niet op aannames.</li>
+  <li><strong>Werk samen</strong>: doe het met mensen die het proces kennen (medewerkers, opdrachtgever).</li>
+  <li><strong>Vraag door, maar niet te veel</strong>: stop als je bij iets komt dat de organisatie kan veranderen. "Omdat mensen haast hebben" is te ver.</li>
+  <li><strong>Documenteer het proces</strong>: schrijf elke stap op, dan kun je je redenering later onderbouwen.</li>
+</ol>
+
+<h3>6W-methode</h3>
+<p>Met zes vragen breng je het probleem van alle kanten in kaart: <strong>Wie</strong> heeft er last van? <strong>Wat</strong> gaat er mis? <strong>Waar</strong> gebeurt het? <strong>Wanneer</strong> gebeurt het? <strong>Waarom</strong> is het een probleem? <strong>Hoe</strong> ontstaat het? Samen leiden de antwoorden naar de grondoorzaak.</p>
+
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: 5x Waarom</p>
+<ol class="why">
+  <li data-n="1"><span class="q">Probleem</span>Klanten zijn ontevreden en de Google-score daalt.</li>
+  <li data-n="W1"><span class="q">Waarom zijn klanten ontevreden?</span>Hun fiets is vaak later klaar dan beloofd en ze moeten zelf bellen om dat te horen.</li>
+  <li data-n="W2"><span class="q">Waarom is de fiets later klaar?</span>De monteur moet vaak wachten op een onderdeel dat niet op voorraad is.</li>
+  <li data-n="W3"><span class="q">Waarom moet hij wachten?</span>Het onderdeel wordt pas besteld als de monteur aan de fiets begint, soms dagen na het brengen.</li>
+  <li data-n="W4"><span class="q">Waarom wordt het pas dan besteld?</span>Bij het brengen schrijft de balie alleen de klacht op een papieren werkbon; niemand kijkt dan al welke onderdelen nodig zijn.</li>
+  <li class="root" data-n="W5"><span class="q">Waarom gebeurt dat niet?</span><strong>Grondoorzaak:</strong> er is geen vaste intake met diagnose en geen actueel overzicht van de voorraad. De ophaaldatum is daardoor een gok.</li>
+</ol>
+</div>
+
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: 6W-analyse</p><div class="table-wrap"><table><thead><tr><th>Vraag</th><th>Antwoord voor De Spaak</th></tr></thead><tbody><tr><td>Wie</td><td>Klanten met een reparatie; baliemedewerkers die de telefoon opnemen; monteurs die moeten wachten.</td></tr><tr><td>Wat</td><td>Reparaties zijn te laat klaar (± 4 op de 10) en klanten worden niet op de hoogte gehouden.</td></tr><tr><td>Waar</td><td>In de werkplaats en bij de balie, op het moment van overdracht van klant naar monteur.</td></tr><tr><td>Wanneer</td><td>Vooral bij e-bikes en in het voorjaar (drukke periode).</td></tr><tr><td>Waarom</td><td>Ontevreden klanten, slechte reviews, verkopers verliezen tijd aan telefoontjes, risico dat klanten naar de concurrent gaan.</td></tr><tr><td>Hoe</td><td>Onderdelen worden laat besteld, er is geen planning en de status van een reparatie staat nergens vast.</td></tr></tbody></table></div></div>
+
+<h3>De probleemstelling</h3>
+<p>Je eindigt met een korte, concrete probleemstelling. Een goede probleemstelling beschrijft de huidige situatie, de gewenste situatie en het gevolg als er niets verandert.</p>
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: probleemstelling</p><p><em>"Bij De Spaak is in de afgelopen zes maanden ongeveer 38% van de reparaties later klaar dan beloofd. De gemiddelde doorlooptijd is ruim 6 dagen, terwijl de concurrent 2 werkdagen belooft. De belangrijkste oorzaak is dat benodigde onderdelen pas worden besteld wanneer de monteur aan de reparatie begint, omdat er geen intake met diagnose en geen actueel voorraadoverzicht is. Hierdoor bellen klanten dagelijks voor de status, daalt de klanttevredenheid (Google-score van 4,5 naar 3,7) en verliezen verkopers tijd. De Spaak wil dat minstens 90% van de reparaties op de beloofde dag klaar is."</em></p></div>
+
+<div class="box warn"><p class="box-title">⚠️ Veelgemaakte fouten</p><ul><li>Een oplossing in de probleemstelling zetten ("Het probleem is dat er geen app is"). Een ontbrekende oplossing is geen probleem.</li><li>Stoppen bij het symptoom.</li><li>Geen cijfers of bronnen: hoe weet je dat het een probleem is? Noem waar je informatie vandaan komt (interview, observatie, data).</li></ul></div>
+
+<h2>Checklist</h2>
+<ul class="checklist"><li>Ik heb de huidige en de gewenste situatie beschreven.</li><li>Ik heb met 5x Waarom en/of de 6W-methode de grondoorzaak gevonden.</li><li>Mijn antwoorden zijn onderbouwd met feiten (interview, observatie of data).</li><li>Mijn probleemstelling bevat geen oplossing.</li><li>De opdrachtgever herkent de probleemstelling.</li></ul>
+
+<nav class="pager"><a class="prev" href="casus.html"><small>← Vorige</small>De casus: Fietsenwinkel De Spaak</a><a class="next" href="bedrijfsanalyse.html"><small>Volgende →</small>Bedrijfsanalyse</a></nav>
+</main>
+</div>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data-analyse · Process Data in Organisations</title>
+<meta name="description" content="Startsemester Fontys ICT · Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><span class="logo">PD</span>Process Data in Organisations</a>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+</div></header>
+<div class="layout">
+<nav class="sidenav" aria-label="Producten"><h4>Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html" class="active"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<main>
+<p class="eyebrow">Product 7 van 8</p>
+<h1>Data-analyse</h1>
+<p class="lead">Met data-analyse onderbouw je met feiten wat er aan de hand is. Je laat zien hoe groot het probleem is, waar het zit, en of je vermoedens kloppen.</p>
+<div class="summary">
+  <div><b>Wat is het?</b>Het verzamelen, opschonen en analyseren van data om een onderzoeksvraag te beantwoorden.</div>
+  <div><b>Doel</b>Aannames vervangen door feiten, zodat de organisatie onderbouwd kan beslissen.</div>
+  <div><b>Je levert op</b>Onderzoeksvraag, beschrijving van de data en hoe je die hebt opgeschoond, de analyse (Excel, SQL, Power BI of Python) en conclusies.</div>
+</div>
+<h2>Wat is data-analyse?</h2>
+<p>Data-analyse is het systematisch onderzoeken van gegevens om een vraag te beantwoorden. Je volgt daarbij vijf stappen:</p>
+<ol>
+  <li><strong>Bepaal het onderwerp van je analyse.</strong> Denk na over de reden waarom je een analyse wilt. Welke vraag wil je beantwoorden?</li>
+  <li><strong>Onderzoek verschillende databronnen.</strong> Bepaal welke databronnen relevant zijn en vergelijk ze.</li>
+  <li><strong>Filter de data.</strong> Bepaal welke informatie relevant is en selecteer alleen die. Schoon de data op: dubbele rijen, lege velden, typefouten.</li>
+  <li><strong>Analyseer de data.</strong> Onderzoek de data op een gestructureerde manier en gebruik de juiste tools.</li>
+  <li><strong>Interpreteer de resultaten.</strong> Wat betekenen de uitkomsten? Wat moet de organisatie ermee?</li>
+</ol>
+
+<h2>Doel</h2>
+<p>Je probleemanalyse is gebaseerd op gesprekken. Met data-analyse toets je of die beelden kloppen en maak je ze meetbaar. "Reparaties zijn vaak te laat" wordt "38% van de reparaties is te laat, en bij 74% daarvan werd gewacht op een onderdeel". Daarmee kan een opdrachtgever wél een beslissing nemen.</p>
+
+<h2>Voorbeeld: de vijf stappen bij De Spaak</h2>
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: stap 1 en 2: vraag en databronnen</p>
+<p><strong>Onderzoeksvraag:</strong> <em>Hoe lang duurt een reparatie bij De Spaak, hoe vaak is die te laat, en welke factoren hangen samen met vertraging?</em></p>
+<div class="table-wrap"><table><thead><tr><th>Databron</th><th>Bruikbaar?</th><th>Opmerking</th></tr></thead><tbody><tr><td>Werkbonnen (Excel)</td><td>Ja, hoofdbron</td><td>1.140 reparaties, 6 maanden, met datums en omschrijving</td></tr><tr><td>Kassasysteem</td><td>Deels</td><td>Bevestigt de ophaaldatum (= betaaldatum)</td></tr><tr><td>Voorraadlijst</td><td>Beperkt</td><td>Niet actueel, alleen huidige stand, geen historie</td></tr><tr><td>Google-reviews</td><td>Ja, aanvullend</td><td>Tekst laat zien waar klanten over klagen</td></tr></tbody></table></div></div>
+
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: stap 3: data filteren en opschonen</p>
+<p>Een fragment van de werkbonnen na opschonen:</p>
+<div class="table-wrap"><table><thead><tr><th>bon</th><th>type</th><th>datum_binnen</th><th>beloofd</th><th>klaar</th><th>onderdeel_besteld</th><th class="n">dagen</th><th>op_tijd</th></tr></thead><tbody><tr><td>24-0811</td><td>e-bike</td><td>02-09</td><td>06-09</td><td>13-09</td><td>ja</td><td class="n">11</td><td>nee</td></tr><tr><td>24-0812</td><td>stadsfiets</td><td>02-09</td><td>04-09</td><td>04-09</td><td>nee</td><td class="n">2</td><td>ja</td></tr><tr><td>24-0813</td><td>e-bike</td><td>03-09</td><td>06-09</td><td>05-09</td><td>nee</td><td class="n">2</td><td>ja</td></tr><tr><td>24-0814</td><td>racefiets</td><td>03-09</td><td>05-09</td><td>10-09</td><td>ja</td><td class="n">7</td><td>nee</td></tr><tr><td>24-0815</td><td>stadsfiets</td><td>03-09</td><td>06-09</td><td>06-09</td><td>nee</td><td class="n">3</td><td>ja</td></tr></tbody></table></div>
+<p>Wat is er gedaan:</p>
+<ul>
+  <li>23 dubbele werkbonnen verwijderd (zelfde bonnummer twee keer ingevoerd).</li>
+  <li>Datums gelijk getrokken naar één formaat (er stond "2/9", "02-09-2024" en "2 sept").</li>
+  <li>Type fiets gecategoriseerd uit de vrije tekst ("Gazelle elektr." wordt <code>e-bike</code>).</li>
+  <li>Kolommen <code>dagen</code> en <code>op_tijd</code> berekend uit de datums.</li>
+  <li>41 bonnen zonder ophaaldatum apart gezet (fiets nog niet opgehaald).</li>
+</ul>
+</div>
+
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: stap 4: analyseren</p>
+<p>Dezelfde analyse kun je met verschillende tools doen. Kies wat past bij de hoeveelheid data en wat je al kunt.</p>
+<h4>Excel</h4>
+<p>Maak een draaitabel met <code>onderdeel_besteld</code> in de rijen en het gemiddelde van <code>dagen</code> als waarde. Of met een formule:</p>
+<pre><code>=GEMIDDELDE.ALS(F:F; "ja"; G:G)</code></pre>
+<h4>SQL</h4>
+<pre><code>SELECT r.onderdeel_besteld,
+       COUNT(*)                                   AS aantal,
+       ROUND(AVG(r.dagen), 1)                     AS gem_doorlooptijd,
+       ROUND(100.0 * SUM(CASE WHEN r.op_tijd = 'nee' THEN 1 ELSE 0 END)
+             / COUNT(*), 0)                       AS pct_te_laat
+FROM   werkbonnen r
+GROUP  BY r.onderdeel_besteld;</code></pre>
+<h4>Python (pandas)</h4>
+<pre><code>import pandas as pd
+
+df = pd.read_excel("werkbonnen.xlsx")
+df.groupby("onderdeel_besteld").agg(
+    aantal=("bon", "count"),
+    gem_doorlooptijd=("dagen", "mean"),
+    pct_te_laat=("op_tijd", lambda s: (s == "nee").mean() * 100),
+).round(1)</code></pre>
+<h4>Power BI</h4>
+<p>Laad het Excel-bestand in via <em>Gegevens ophalen</em>, controleer de datatypes in Power Query en maak een staafdiagram met <code>onderdeel_besteld</code> op de as en het gemiddelde van <code>dagen</code> als waarde.</p>
+<h4>Resultaten</h4>
+<div class="table-wrap"><table><thead><tr><th>Groep</th><th class="n">Aantal</th><th class="n">Gem. doorlooptijd</th><th class="n">% te laat</th></tr></thead><tbody><tr><td>Onderdeel op voorraad</td><td class="n">632</td><td class="n">3,1 dagen</td><td class="n">17%</td></tr><tr><td>Onderdeel besteld</td><td class="n">444</td><td class="n">10,6 dagen</td><td class="n">68%</td></tr><tr><td><strong>Totaal</strong></td><td class="n"><strong>1.076</strong></td><td class="n"><strong>6,2 dagen</strong></td><td class="n"><strong>38%</strong></td></tr></tbody></table></div>
+<div class="split">
+  <div><svg viewBox="0 0 380 230" width="380" height="230" role="img" aria-label="Gemiddelde doorlooptijd in dagen" xmlns="http://www.w3.org/2000/svg"><line x1="40" x2="370" y1="184.0" y2="184.0" class="grid"/><text x="34" y="188.0" font-size="11" text-anchor="end" class="muted">0</text><line x1="40" x2="370" y1="142.0" y2="142.0" class="grid"/><text x="34" y="146.0" font-size="11" text-anchor="end" class="muted">3</text><line x1="40" x2="370" y1="100.0" y2="100.0" class="grid"/><text x="34" y="104.0" font-size="11" text-anchor="end" class="muted">6</text><line x1="40" x2="370" y1="58.0" y2="58.0" class="grid"/><text x="34" y="62.0" font-size="11" text-anchor="end" class="muted">9</text><line x1="40" x2="370" y1="16.0" y2="16.0" class="grid"/><text x="34" y="20.0" font-size="11" text-anchor="end" class="muted">12</text><rect x="69.7" y="140.6" width="105.6" height="43.4" rx="3" class="bar"/><text x="122.5" y="135.6" font-size="11" text-anchor="middle" font-weight="600">3.1</text><text x="122.5" y="199.0" font-size="11" text-anchor="middle" class="muted"><tspan x="122.5" dy="0.0">Onderdeel op</tspan><tspan x="122.5" dy="13.8">voorraad</tspan></text><rect x="234.7" y="35.6" width="105.6" height="148.4" rx="3" class="bar alt"/><text x="287.5" y="30.6" font-size="11" text-anchor="middle" font-weight="600">10.6</text><text x="287.5" y="199.0" font-size="11" text-anchor="middle" class="muted"><tspan x="287.5" dy="0.0">Onderdeel</tspan><tspan x="287.5" dy="13.8">besteld</tspan></text></svg></div>
+  <div><svg viewBox="0 0 380 230" width="380" height="230" role="img" aria-label="Percentage te laat per type fiets" xmlns="http://www.w3.org/2000/svg"><line x1="40" x2="370" y1="184.0" y2="184.0" class="grid"/><text x="34" y="188.0" font-size="11" text-anchor="end" class="muted">0</text><line x1="40" x2="370" y1="142.0" y2="142.0" class="grid"/><text x="34" y="146.0" font-size="11" text-anchor="end" class="muted">15</text><line x1="40" x2="370" y1="100.0" y2="100.0" class="grid"/><text x="34" y="104.0" font-size="11" text-anchor="end" class="muted">30</text><line x1="40" x2="370" y1="58.0" y2="58.0" class="grid"/><text x="34" y="62.0" font-size="11" text-anchor="end" class="muted">45</text><line x1="40" x2="370" y1="16.0" y2="16.0" class="grid"/><text x="34" y="20.0" font-size="11" text-anchor="end" class="muted">60</text><rect x="69.7" y="125.2" width="105.6" height="58.8" rx="3" class="bar"/><text x="122.5" y="120.2" font-size="11" text-anchor="middle" font-weight="600">21%</text><text x="122.5" y="205.8" font-size="11" text-anchor="middle" class="muted"><tspan x="122.5" dy="0.0">Gewone fiets</tspan></text><rect x="234.7" y="38.4" width="105.6" height="145.6" rx="3" class="bar alt"/><text x="287.5" y="33.4" font-size="11" text-anchor="middle" font-weight="600">52%</text><text x="287.5" y="205.8" font-size="11" text-anchor="middle" class="muted"><tspan x="287.5" dy="0.0">E-bike</tspan></text></svg></div>
+</div>
+</div>
+
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: stap 5: interpreteren</p>
+<ul>
+  <li><strong>De vermoedens uit de probleemanalyse kloppen.</strong> Als een onderdeel besteld moet worden, duurt een reparatie gemiddeld 3,5 keer zo lang en is die in 68% van de gevallen te laat.</li>
+  <li><strong>74% van alle te late reparaties</strong> had een besteld onderdeel. Dat is de grootste hefboom.</li>
+  <li><strong>E-bikes</strong> zijn 2,5 keer zo vaak te laat als gewone fietsen. E-bike-onderdelen (accu's, sensoren) zijn vaak niet op voorraad.</li>
+  <li><strong>Advies:</strong> diagnose bij de intake en direct bestellen (SOLL-proces), plus een vaste voorraad van de 10 meest gebruikte e-bike-onderdelen.</li>
+</ul>
+<p><em>Let op de beperking:</em> de werkbonnen zijn met de hand overgetypt; datums kunnen af en toe niet kloppen. De Google-reviews zijn niet statistisch geanalyseerd, maar ondersteunen het beeld: 31 van de 44 negatieve reviews noemen "lang wachten" of "niet gebeld".</p>
+</div>
+
+<div class="box tip"><p class="box-title">💡 Welke tool kies je?</p><div class="table-wrap"><table><thead><tr><th>Tool</th><th>Handig voor</th></tr></thead><tbody><tr><td>Excel</td><td>Kleine datasets, snel verkennen, draaitabellen. Laagdrempelig.</td></tr><tr><td>SQL</td><td>Data die in een database staat, tabellen koppelen, grotere datasets.</td></tr><tr><td>Power BI</td><td>Data uit meerdere bronnen combineren en interactieve dashboards maken.</td></tr><tr><td>Python</td><td>Grote of rommelige datasets, herhaalbare analyses, opschonen met code.</td></tr></tbody></table></div></div>
+
+<div class="box warn"><p class="box-title">⚠️ Veelgemaakte fouten</p><ul><li>Beginnen met analyseren zonder onderzoeksvraag.</li><li>Niet vertellen hoe je de data hebt opgeschoond. Dan kan niemand je resultaten controleren.</li><li>Alleen grafieken laten zien zonder conclusie: wat betekent dit?</li><li>Samenhang verwarren met oorzaak. Dat e-bikes vaker te laat zijn, kan ook komen doordat ze ingewikkelder zijn.</li></ul></div>
+
+<h2>Checklist</h2>
+<ul class="checklist"><li>Ik heb een duidelijke onderzoeksvraag die aansluit bij het probleem.</li><li>Ik heb beschreven welke databronnen ik heb gebruikt en waarom.</li><li>Ik heb beschreven hoe ik de data heb gefilterd en opgeschoond.</li><li>Mijn analyse is herhaalbaar (formules, query of code staan erbij).</li><li>Ik heb conclusies getrokken, een advies gegeven en de beperkingen benoemd.</li></ul>
+
+<nav class="pager"><a class="prev" href="datamodel.html"><small>← Vorige</small>Datamodel</a><a class="next" href="dashboard.html"><small>Volgende →</small>Dashboard & datavisualisatie</a></nav>
+</main>
+</div>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+</body>
+</html>

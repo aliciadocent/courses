@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requirements · Process Data in Organisations</title>
+<meta name="description" content="Startsemester Fontys ICT · Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+  <a class="brand" href="index.html"><span class="logo">PD</span>Process Data in Organisations</a>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+</div></header>
+<div class="layout">
+<nav class="sidenav" aria-label="Producten"><h4>Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html" class="active"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<main>
+<p class="eyebrow">Product 5 van 8</p>
+<h1>Requirements</h1>
+<p class="lead">Requirements beschrijven waar een oplossing aan moet voldoen. Ze vormen de brug tussen je analyse (wat is het probleem?) en de oplossing (wat gaan we bouwen of veranderen?).</p>
+<div class="summary">
+  <div><b>Wat is het?</b>Een geprioriteerde lijst met eisen en wensen voor de oplossing, op verschillende niveaus.</div>
+  <div><b>Doel</b>Samen met de opdrachtgever vastleggen wat de oplossing moet kunnen, en wat het belangrijkst is.</div>
+  <div><b>Je levert op</b>Business-, user- en systeemrequirements, geprioriteerd met MoSCoW, met de herkomst van elke requirement.</div>
+</div>
+<h2>Wat zijn requirements?</h2>
+<p>Requirements zijn er op drie niveaus, van algemeen naar gedetailleerd:</p>
+<div class="table-wrap"><table><thead><tr><th>Niveau</th><th>Perspectief</th><th>Beschrijft</th></tr></thead><tbody><tr><td><strong>Business requirements</strong></td><td>Opdrachtgever</td><td>De doelen van de organisatie en de scope van het project. Waarom doen we dit?</td></tr><tr><td><strong>User requirements</strong></td><td>Gebruiker</td><td>Wat de gebruiker moet kunnen doen. Vaak als user story: <em>Als … wil ik … zodat …</em></td></tr><tr><td><strong>System requirements</strong></td><td>Systeem</td><td><strong>Functioneel</strong>: wat het systeem doet. <strong>Niet-functioneel</strong>: hoe goed het systeem dat doet (snelheid, veiligheid, gebruiksgemak).</td></tr></tbody></table></div>
+
+<h3>Prioriteren met MoSCoW</h3>
+<p>Je kunt meestal niet alles tegelijk doen. Met MoSCoW geef je samen met de opdrachtgever aan wat het belangrijkst is:</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>Betekenis</th></tr></thead><tbody><tr><td><span class="tag must">Must have</span></td><td>Zonder dit werkt de oplossing niet of lost hij het probleem niet op.</td></tr><tr><td><span class="tag should">Should have</span></td><td>Belangrijk, maar de oplossing werkt ook zonder.</td></tr><tr><td><span class="tag could">Could have</span></td><td>Leuk om te hebben als er tijd over is.</td></tr><tr><td><span class="tag wont">Won’t have (this time)</span></td><td>Bewust niet nu. Schrijf deze ook op, dan weet iedereen wat buiten de scope valt.</td></tr></tbody></table></div>
+
+<h2>Doel</h2>
+<p>Requirements zorgen dat iedereen (opdrachtgever, gebruikers, jij) hetzelfde beeld heeft van de oplossing. Ze maken je oplossing toetsbaar: aan het eind kun je per requirement controleren of het gelukt is. Elke requirement moet terug te voeren zijn op je analyse: een pijnpunt, een knelpunt in het proces of een doel van de organisatie.</p>
+
+<h2>Voorbeeld</h2>
+<div class="box example"><p class="box-title">🚲 Voorbeeld De Spaak: requirements</p>
+<h4>Business requirements</h4>
+<ul>
+  <li><strong>BR1</strong> Minstens 90% van de reparaties is klaar op de beloofde dag (nu ± 62%).</li>
+  <li><strong>BR2</strong> Het aantal telefoontjes over de status van een reparatie daalt met 75%.</li>
+  <li><strong>BR3</strong> De Google-score stijgt binnen een jaar weer naar 4,3 of hoger.</li>
+</ul>
+<h4>User requirements (user stories)</h4>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>User story</th><th>Bron</th><th>MoSCoW</th></tr></thead><tbody><tr><td>UR1</td><td>Als <strong>klant</strong> wil ik bij het brengen een betrouwbare ophaaldatum krijgen, zodat ik mijn vervoer kan regelen.</td><td>Persona Lisa, knelpunt 2</td><td><span class="tag must">Must</span></td></tr><tr><td>UR2</td><td>Als <strong>klant</strong> wil ik automatisch bericht krijgen als mijn fiets klaar is, zodat ik niet hoef te bellen.</td><td>Customer journey, knelpunt 4</td><td><span class="tag must">Must</span></td></tr><tr><td>UR3</td><td>Als <strong>monteur</strong> wil ik bij het begin van een reparatie zien dat de onderdelen er zijn, zodat ik niet hoef te wachten.</td><td>Persona Ahmed, knelpunt 3</td><td><span class="tag must">Must</span></td></tr><tr><td>UR4</td><td>Als <strong>baliemedewerker</strong> wil ik de status van elke reparatie kunnen opzoeken, zodat ik vragen direct kan beantwoorden.</td><td>Interview balie</td><td><span class="tag should">Should</span></td></tr><tr><td>UR5</td><td>Als <strong>eigenaar</strong> wil ik een overzicht van doorlooptijden en vertragingen, zodat ik kan bijsturen.</td><td>Interview Sanne</td><td><span class="tag should">Should</span></td></tr><tr><td>UR6</td><td>Als <strong>klant</strong> wil ik online een reparatieafspraak kunnen maken.</td><td>Interview klanten</td><td><span class="tag could">Could</span></td></tr><tr><td>UR7</td><td>Als <strong>klant</strong> wil ik online kunnen betalen.</td><td></td><td><span class="tag wont">Won’t</span></td></tr></tbody></table></div>
+<h4>System requirements</h4>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Requirement</th><th>Type</th><th>MoSCoW</th></tr></thead><tbody><tr><td>SR1</td><td>Het systeem legt per reparatie vast: klant, fiets, omschrijving, benodigde onderdelen, monteur, datum binnen, beloofde datum, datum klaar en status.</td><td>Functioneel</td><td><span class="tag must">Must</span></td></tr><tr><td>SR2</td><td>Het systeem stuurt een sms naar de klant als de status verandert naar 'klaar'.</td><td>Functioneel</td><td><span class="tag must">Must</span></td></tr><tr><td>SR3</td><td>Het systeem toont bij de intake de actuele voorraad van een onderdeel.</td><td>Functioneel</td><td><span class="tag must">Must</span></td></tr><tr><td>SR4</td><td>Een monteur kan de status van een reparatie in maximaal 2 klikken aanpassen, ook op een tablet in de werkplaats.</td><td>Niet-functioneel (gebruiksgemak)</td><td><span class="tag should">Should</span></td></tr><tr><td>SR5</td><td>Klantgegevens worden volgens de AVG opgeslagen en na 2 jaar zonder bezoek verwijderd.</td><td>Niet-functioneel (privacy)</td><td><span class="tag must">Must</span></td></tr></tbody></table></div></div>
+
+<div class="box tip"><p class="box-title">💡 Maak requirements SMART</p><p>"Het systeem moet snel zijn" kun je niet testen. "De statuspagina laadt binnen 2 seconden" wel. Hoe concreter, hoe beter je later kunt controleren of je oplossing werkt.</p></div>
+
+<div class="box warn"><p class="box-title">⚠️ Veelgemaakte fouten</p><ul><li>Alles is een Must. Dan heb je niet geprioriteerd.</li><li>Requirements zonder herkomst: waarom is dit nodig? Verwijs naar je analyse.</li><li>Een oplossing beschrijven in plaats van een behoefte ("Er moet een app komen" in plaats van "De klant wil op de hoogte blijven").</li></ul></div>
+
+<h2>Checklist</h2>
+<ul class="checklist"><li>Ik heb business-, user- en systeemrequirements beschreven.</li><li>Mijn user stories volgen het format <em>Als … wil ik … zodat …</em></li><li>Ik heb onderscheid gemaakt tussen functionele en niet-functionele requirements.</li><li>Elke requirement is terug te voeren op mijn analyse.</li><li>Ik heb samen met de opdrachtgever geprioriteerd met MoSCoW.</li></ul>
+
+<nav class="pager"><a class="prev" href="procesanalyse.html"><small>← Vorige</small>Procesanalyse</a><a class="next" href="datamodel.html"><small>Volgende →</small>Datamodel</a></nav>
+</main>
+</div>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+</body>
+</html>
