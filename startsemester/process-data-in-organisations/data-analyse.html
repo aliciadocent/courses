@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Data-analyse · Voorbereiding Process Data in Organisations</title>
-<meta name="description" content="Startsemester Fontys ICT · Voorbereiding Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<meta name="description" content="Startsemester Fontys ICT · Voorbereiding Process Data in Organisations: uitleg per product met een uitgewerkt voorbeeld.">
 <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
 <header class="site-header"><div class="inner">
   <a class="brand" href="index.html"><span class="logo">PD</span>Voorbereiding Process Data in Organisations</a>
-  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester</span>
 </div></header>
 <div class="layout">
-<nav class="sidenav" aria-label="Producten"><h4>Voorbereiding Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html" class="active"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="sql.html"><span class="num">+</span><span>Extra: SQL-werkplaats</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<nav class="sidenav" aria-label="Producten"><h4>Voorbereiding Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="challenge-3.html"><span class="num">◆</span><span>Challenge 3: welk product wanneer?</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html" class="active"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="sql.html"><span class="num">+</span><span>Extra: SQL-werkplaats</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
 <main>
 <p class="eyebrow">Product 7 van 8</p>
 <h1>Data-analyse</h1>
@@ -22,6 +22,17 @@
   <div><b>Wat is het?</b>Het verzamelen, opschonen en analyseren van data om een onderzoeksvraag te beantwoorden.</div>
   <div><b>Doel</b>Aannames vervangen door feiten, zodat de organisatie onderbouwd kan beslissen.</div>
   <div><b>Je levert op</b>Onderzoeksvraag, beschrijving van de data en hoe je die hebt opgeschoond, de analyse (Excel, SQL, Power BI of Python) en conclusies.</div>
+</div>
+<div class="tldr">
+  <p class="tldr-title">In het kort</p>
+  <p>Je beantwoordt een onderzoeksvraag met data in vijf stappen: onderwerp bepalen, databronnen kiezen, filteren en opschonen, analyseren (Excel, SQL, Power BI of Python) en interpreteren.</p>
+  <p class="tldr-sub">Belangrijke begrippen</p>
+  <div class="terms"><span class="term">onderzoeksvraag</span><span class="term">databron</span><span class="term">data opschonen</span><span class="term">draaitabel</span><span class="term">SQL-query</span><span class="term">Power BI</span><span class="term">pandas</span><span class="term">samenhang vs. oorzaak</span><span class="term">conclusie en advies</span></div>
+</div>
+<div class="box c3">
+  <p class="box-title">👥 In challenge 3 · Begin én einde van de challenge <span class="phase-tag">Analyse</span><span class="phase-tag">Validatie</span></p>
+  <p>Aan het begin onderbouw je het probleem met cijfers; aan het eind meet je of jullie oplossing werkt. Challenges als FreshChoice vragen er letterlijk om: "analyze the data in order to identify the cause".</p>
+  <p class="small">Workshop in Canvas: <a href="https://fhict.instructure.com/courses/16021/pages/workshop-basic-data-analysis" target="_blank" rel="noopener">Workshop Basic Data analysis</a> · <a href="https://fhict.instructure.com/courses/16021/pages/workshop-basic-python-programming-for-statistics-and-data-visualization" target="_blank" rel="noopener">Workshop Basic Python for Statistics and Data Visualization</a> · <a href="challenge-3.html">Bekijk de planning voor challenge 3 →</a></p>
 </div>
 <h2>Wat is data-analyse?</h2>
 <p>Data-analyse is het systematisch onderzoeken van gegevens om een vraag te beantwoorden. Je volgt daarbij vijf stappen:</p>
@@ -107,6 +118,6 @@ df.groupby("onderdeel_besteld").agg(
 <nav class="pager"><a class="prev" href="datamodel.html"><small>← Vorige</small>Datamodel</a><a class="next" href="sql.html"><small>Volgende →</small>Extra: SQL-werkplaats</a></nav>
 </main>
 </div>
-<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Voorbereiding Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Voorbereiding Process Data in Organisations. De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
 </body>
 </html>

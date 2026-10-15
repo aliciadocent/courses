@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SQL-werkplaats · Voorbereiding Process Data in Organisations</title>
-<meta name="description" content="Startsemester Fontys ICT · Voorbereiding Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<meta name="description" content="Startsemester Fontys ICT · Voorbereiding Process Data in Organisations: uitleg per product met een uitgewerkt voorbeeld.">
 <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
 <header class="site-header"><div class="inner">
   <a class="brand" href="index.html"><span class="logo">PD</span>Voorbereiding Process Data in Organisations</a>
-  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester</span>
 </div></header>
 <div class="layout">
-<nav class="sidenav" aria-label="Producten"><h4>Voorbereiding Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="sql.html" class="active"><span class="num">+</span><span>Extra: SQL-werkplaats</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<nav class="sidenav" aria-label="Producten"><h4>Voorbereiding Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="challenge-3.html"><span class="num">◆</span><span>Challenge 3: welk product wanneer?</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="sql.html" class="active"><span class="num">+</span><span>Extra: SQL-werkplaats</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
 <main>
 
 <p class="eyebrow">Extra bij product 7: Data-analyse</p>
@@ -23,6 +23,17 @@
   <div><b>Wat leer je?</b>MySQL installeren met Docker, een SQL-programma koppelen en gegevens opvragen met SELECT, WHERE, GROUP BY en JOIN.</div>
   <div><b>Wat heb je nodig?</b>Een laptop (Windows of Mac), ongeveer 3 GB vrije ruimte en een internetverbinding.</div>
   <div><b>Oefenbestand</b><a href="data/spaak.sql" download>spaak.sql</a> (240 kB): 820 klanten, 1.117 reparaties.</div>
+</div>
+<div class="tldr">
+  <p class="tldr-title">In het kort</p>
+  <p>Je installeert MySQL met Docker, koppelt een SQL-programma en vraagt gegevens op met SQL: van SELECT en WHERE tot GROUP BY, JOIN en een subquery.</p>
+  <p class="tldr-sub">Belangrijke begrippen</p>
+  <div class="terms"><span class="term">database</span><span class="term">DBMS</span><span class="term">Docker</span><span class="term">container</span><span class="term">DDL / DML</span><span class="term">SELECT</span><span class="term">WHERE</span><span class="term">NULL</span><span class="term">GROUP BY</span><span class="term">JOIN</span><span class="term">subquery</span></div>
+</div>
+<div class="box c3">
+  <p class="box-title">👥 In challenge 3 · Tweede helft <span class="phase-tag">Realisatie</span><span class="phase-tag">Validatie</span></p>
+  <p>Zodra jullie datamodel staat, bouw je er een database van en vul je die met (test)data. Met SQL-queries doe je daarna de data-analyse of lever je de cijfers voor het dashboard.</p>
+  <p class="small">Workshop in Canvas: <a href="https://fhict.instructure.com/courses/16021/pages/workshop-basic-sql" target="_blank" rel="noopener">Workshop Basic SQL</a> · <a href="https://fhict.instructure.com/courses/16021/pages/workshop-advanced-sql" target="_blank" rel="noopener">Workshop Advanced SQL</a> · <a href="challenge-3.html">Bekijk de planning voor challenge 3 →</a></p>
 </div>
 
 <h2>Wat is een database?</h2>
@@ -195,6 +206,6 @@ ORDER BY maand;</code></pre><div class="table-wrap"><table><thead><tr><th>maand<
 <nav class="pager"><a class="prev" href="data-analyse.html"><small>← Vorige</small>Data-analyse</a><a class="next" href="dashboard.html"><small>Volgende →</small>Dashboard & datavisualisatie</a></nav>
 </main>
 </div>
-<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Voorbereiding Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Voorbereiding Process Data in Organisations. De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
 </body>
 </html>

@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datamodel · Voorbereiding Process Data in Organisations</title>
-<meta name="description" content="Startsemester Fontys ICT · Voorbereiding Process Data in Organisations (16021): uitleg per product met een uitgewerkt voorbeeld.">
+<meta name="description" content="Startsemester Fontys ICT · Voorbereiding Process Data in Organisations: uitleg per product met een uitgewerkt voorbeeld.">
 <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
 <header class="site-header"><div class="inner">
   <a class="brand" href="index.html"><span class="logo">PD</span>Voorbereiding Process Data in Organisations</a>
-  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester › 16021</span>
+  <span class="crumbs"><a href="../../index.html">Courses</a> › Startsemester</span>
 </div></header>
 <div class="layout">
-<nav class="sidenav" aria-label="Producten"><h4>Voorbereiding Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html" class="active"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="sql.html"><span class="num">+</span><span>Extra: SQL-werkplaats</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
+<nav class="sidenav" aria-label="Producten"><h4>Voorbereiding Process Data in Organisations</h4><ol><li><a href="index.html"><span class="num">·</span><span>Overzicht</span></a></li><li><a href="casus.html"><span class="num">★</span><span>De casus: Fietsenwinkel De Spaak</span></a></li><li><a href="challenge-3.html"><span class="num">◆</span><span>Challenge 3: welk product wanneer?</span></a></li><li><a href="probleemanalyse.html"><span class="num">1</span><span>Probleemanalyse</span></a></li><li><a href="bedrijfsanalyse.html"><span class="num">2</span><span>Bedrijfsanalyse</span></a></li><li><a href="gebruikersanalyse.html"><span class="num">3</span><span>Gebruikersanalyse</span></a></li><li><a href="procesanalyse.html"><span class="num">4</span><span>Procesanalyse</span></a></li><li><a href="requirements.html"><span class="num">5</span><span>Requirements</span></a></li><li><a href="datamodel.html" class="active"><span class="num">6</span><span>Datamodel</span></a></li><li><a href="data-analyse.html"><span class="num">7</span><span>Data-analyse</span></a></li><li><a href="sql.html"><span class="num">+</span><span>Extra: SQL-werkplaats</span></a></li><li><a href="dashboard.html"><span class="num">8</span><span>Dashboard & datavisualisatie</span></a></li></ol></nav>
 <main>
 <p class="eyebrow">Product 6 van 8</p>
 <h1>Datamodel</h1>
@@ -22,6 +22,17 @@
   <div><b>Wat is het?</b>Een schema (ERD) met de entiteiten, hun attributen en de relaties daartussen.</div>
   <div><b>Doel</b>Zorgen dat de juiste gegevens worden vastgelegd, zodat je de vragen uit je analyse kunt beantwoorden.</div>
   <div><b>Je levert op</b>Entity Relationship Diagram met entiteiten, attributen, sleutels en relaties (met cardinaliteit), plus een toelichting.</div>
+</div>
+<div class="tldr">
+  <p class="tldr-title">In het kort</p>
+  <p>Je bepaalt welke gegevens nodig zijn en hoe ze samenhangen, en tekent dat in een ERD met entiteiten, attributen, sleutels en relaties.</p>
+  <p class="tldr-sub">Belangrijke begrippen</p>
+  <div class="terms"><span class="term">ERD</span><span class="term">entiteit</span><span class="term">attribuut</span><span class="term">relatie</span><span class="term">cardinaliteit (1:1, 1:N, N:M)</span><span class="term">primaire sleutel (PK)</span><span class="term">vreemde sleutel (FK)</span><span class="term">koppeltabel</span></div>
+</div>
+<div class="box c3">
+  <p class="box-title">👥 In challenge 3 · Tweede helft <span class="phase-tag">Ontwerp</span></p>
+  <p>Het datamodel is de bouwtekening voor de database. Groepsgenoten die de software bouwen, gebruiken het direct; en het bepaalt welke data jij later kunt analyseren.</p>
+  <p class="small">Workshop in Canvas: <a href="https://fhict.instructure.com/courses/16021/pages/workshop-basic-datamodelling" target="_blank" rel="noopener">Workshop Basic datamodelling</a> · <a href="https://fhict.instructure.com/courses/16021/pages/workshop-advanced-datamodelling" target="_blank" rel="noopener">Workshop Advanced datamodelling</a> · <a href="challenge-3.html">Bekijk de planning voor challenge 3 →</a></p>
 </div>
 <h2>Wat is een datamodel?</h2>
 <p>Een datamodel beschrijft de gegevens die nodig zijn, los van het programma waarin ze staan. Je tekent het meestal als <strong>Entity Relationship Diagram (ERD)</strong>. De belangrijkste begrippen:</p>
@@ -53,6 +64,6 @@
 <nav class="pager"><a class="prev" href="requirements.html"><small>← Vorige</small>Requirements</a><a class="next" href="data-analyse.html"><small>Volgende →</small>Data-analyse</a></nav>
 </main>
 </div>
-<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Voorbereiding Process Data in Organisations (16021). De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
+<footer class="site-footer"><div class="inner">Fontys ICT · Startsemester · Voorbereiding Process Data in Organisations. De casus De Spaak is fictief en bedoeld als voorbeeld.</div></footer>
 </body>
 </html>
