@@ -327,3 +327,18 @@ kbd { font-family: var(--mono); font-size: .82em; border: 1px solid var(--border
   .timeline .when { text-align: left; padding-right: 0; }
   .cols-list { columns: 1; }
 }
+
+/* Samenvattingskaart bovenaan elk onderwerp */
+.recap { margin: 24px 0 16px; border: 2px solid var(--accent); border-radius: 16px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow); }
+.recap-head { background: var(--accent); color: var(--accent-text); font-weight: 700; font-size: 1.05rem; letter-spacing: .02em; padding: 10px 20px; }
+.recap-body { padding: 18px 20px 20px; }
+.recap-text { font-size: 1.12rem; line-height: 1.6; margin: 0 0 16px; font-weight: 500; }
+.recap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.recap-grid > div { background: var(--accent-soft); border-radius: 12px; padding: 12px 14px; font-size: .94rem; line-height: 1.5; }
+.recap-grid b { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+.recap-grid p { margin: 4px 0 0; }
+.recap-icon { font-size: 1.1rem; margin-right: 6px; }
+.recap-terms { border-top: 1px dashed var(--border); padding-top: 14px; }
+.recap-terms > b { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+.recap .term { background: var(--accent); color: var(--accent-text); border: 0; font-weight: 600; padding: 4px 12px; font-size: .88rem; }
+@media (max-width: 760px) { .recap-grid { grid-template-columns: 1fr; } }
