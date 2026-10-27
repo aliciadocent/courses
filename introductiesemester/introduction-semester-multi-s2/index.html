@@ -13,12 +13,18 @@
   <span class="crumbs"><a href="../../index.html">Courses</a> › Introductiesemester › Multisemester 2</span>
 </div></header>
 <div class="layout">
-<nav class="sidenav" aria-label="Op deze pagina"><h4>Op deze pagina</h4><ol><li><a href="#opdracht"><span class="num">·</span><span>De opdracht</span></a></li><li><a href="#topics"><span class="num">·</span><span>Rol per topic</span></a></li><li><a href="#documenten"><span class="num">·</span><span>Teamdocumenten</span></a></li><li class="group">De vijf activiteiten</li><li><a href="#analyseren"><span class="num">1</span><span>Analyseren</span></a></li><li><a href="#adviseren"><span class="num">2</span><span>Adviseren</span></a></li><li><a href="#ontwerpen"><span class="num">3</span><span>Ontwerpen</span></a></li><li><a href="#realiseren"><span class="num">4</span><span>Realiseren (bouwen en testen)</span></a></li><li><a href="#manage-control"><span class="num">5</span><span>Manage &amp; control</span></a></li><li class="group">Doorlopend</li><li><a href="#professional-skills"><span class="num">PS</span><span>Professional Skills</span></a></li><li><a href="#beoordeling"><span class="num">✓</span><span>Beoordeling</span></a></li></ol></nav>
+<nav class="sidenav" aria-label="Op deze pagina"><h4>Op deze pagina</h4><ol><li><a href="#filter"><span class="num">⚲</span><span>Filter op topics</span></a></li><li><a href="#opdracht"><span class="num">·</span><span>De opdracht</span></a></li><li><a href="#topics"><span class="num">·</span><span>Rol per topic</span></a></li><li><a href="#documenten"><span class="num">·</span><span>Teamdocumenten</span></a></li><li class="group">De vijf activiteiten</li><li><a href="#analyseren"><span class="num">1</span><span>Analyseren</span></a></li><li><a href="#adviseren"><span class="num">2</span><span>Adviseren</span></a></li><li><a href="#ontwerpen"><span class="num">3</span><span>Ontwerpen</span></a></li><li><a href="#realiseren"><span class="num">4</span><span>Realiseren (bouwen en testen)</span></a></li><li><a href="#manage-control"><span class="num">5</span><span>Manage &amp; control</span></a></li><li class="group">Doorlopend</li><li><a href="#professional-skills"><span class="num">PS</span><span>Professional Skills</span></a></li><li><a href="#beoordeling"><span class="num">✓</span><span>Beoordeling</span></a></li></ol></nav>
 <main class="anchored">
 <p class="eyebrow">Introduction semester · Multisemester 2</p>
 <h1>De groepsopdracht in Multi S2</h1>
 <p class="lead">Eén opdracht, vijf topics, vijf HBO-i-activiteiten. Wat je maakt, welke theorie erbij hoort en waar topics elkaar raken.</p>
 <div class="flow" aria-label="De vijf activiteiten"><a href="#analyseren">1. Analyseren</a><span>→</span><a href="#adviseren">2. Adviseren</a><span>→</span><a href="#ontwerpen">3. Ontwerpen</a><span>→</span><a href="#realiseren">4. Realiseren</a><span>→</span><a href="#manage-control">5. Manage &amp; control</a></div>
+<section class="topic-filter" id="filter" aria-label="Filter op topics">
+<p class="topic-filter-title"><b>Filter op topics</b> <span class="small">Kies de topics in jouw team. De tabellen en de overlap passen zich aan.</span></p>
+<div class="topic-chips" id="topic-chips"><span class="small">Topics laden…</span></div>
+<p class="small topic-filter-actions"><button type="button" data-select="all">Alle topics</button> · <button type="button" data-select="none">Niets</button> · <span id="topic-summary"></span></p>
+</section>
+<noscript><div class="box warn"><p>Zet JavaScript aan om de topics te zien.</p></div></noscript>
 
 <h2 id="opdracht">De opdracht</h2>
 <p>Een team van 6–7 studenten uit verschillende topics ontwerpt, bouwt en test voor een opdrachtgever (Partner in Education) een werkend deel van een informatiesysteem. Het team werkt in iteraties van 3 weken: planning, demo voor de klant, retrospective en zelfreflectie.</p>
@@ -28,7 +34,7 @@
 <p>Aan het eind is het opgeleverde deel werkend, getest, veilig, beheersbaar en uitlegbaar. Het hoeft niet alles te omvatten.</p>
 
 <h2 id="topics">Rol per topic</h2>
-<div class="table-wrap"><table><thead><tr><th>Topic</th><th>Verantwoordelijk voor</th></tr></thead><tbody><tr><td><strong>Interactive Media (IM)</strong></td><td>Gebruiker en interface: UX-onderzoek, visual design, front-end</td></tr><tr><td><strong>Process Data in Organisations (BDA)</strong></td><td>Proces en data: procesanalyse, advies, data-analyse, prototype</td></tr><tr><td><strong>Software Design &amp; Engineering (SDE)</strong></td><td>Applicatie en database</td></tr><tr><td><strong>Intelligent Technologies (IT)</strong></td><td>Apparaat, embedded systemen en communicatie tussen systemen</td></tr><tr><td><strong>Network &amp; Cloud Basics (NCB)</strong></td><td>Infrastructuur, beveiliging, automatisering en beheer</td></tr></tbody></table></div>
+<div data-render="rollen"></div>
 
 <h2 id="documenten">Teamdocumenten</h2>
 <p>Per activiteit levert het team één gezamenlijk document op met de conclusies en keuzes. Elk topic schrijft daarin een eigen hoofdstuk. Onderzoeken (vraag, methode, resultaten) staan in losse onderzoeksdocumenten waar het teamdocument naar verwijst.</p>
@@ -43,9 +49,10 @@
 <p>Analysedocument. Onderzoeken staan in losse onderzoeksdocumenten.</p>
 </div>
 <h3>Theorie en product per topic</h3>
-<div class="table-wrap"><table><thead><tr><th>Topic</th><th>Theorie</th><th>Product (hoofdstuk in het teamdocument)</th></tr></thead><tbody><tr><td><strong>BDA</strong></td><td>Probleemanalyse, business process management, BPMN (IST), gebruikersanalyse</td><td>Probleemanalyse, IST-procesmodel, persona's en journey, informatiebehoefte, beoordeelde datasets</td></tr><tr><td><strong>SDE</strong></td><td>Functionele en niet-functionele requirements, use cases, conceptueel model (EER)</td><td>Gevalideerde requirements en acceptatiecriteria</td></tr><tr><td><strong>IM</strong></td><td>UX-onderzoek: observatie, interviews/enquête, affinity mapping, persona, scenario, customer journey</td><td>Research proposal en onderzoeksresultaten</td></tr><tr><td><strong>IT</strong></td><td>Systeemcontext, use cases, eigenschappen van sensoren en actuatoren</td><td>Systeemcontext en eisen per subsysteem</td></tr><tr><td><strong>NCB</strong></td><td>IT-businessanalyse, requirements- en stakeholderanalyse, PPDIOO (Prepare)</td><td>Analyse van de huidige situatie en de eisen</td></tr></tbody></table></div>
+<div data-render="theorie" data-activiteit="analyseren"></div>
 <h3>Overlappende thema's</h3>
-<div class="table-wrap"><table><thead><tr><th>Overlappend thema</th><th>Topics</th></tr></thead><tbody><tr><td><strong>Requirements en user stories</strong></td><td>SDE, BDA, IT, NCB</td></tr><tr><td><strong>Use cases</strong></td><td>SDE, IT</td></tr><tr><td><strong>Stakeholderanalyse</strong></td><td>BDA, NCB, team</td></tr><tr><td><strong>Gebruikersonderzoek, persona's en journey</strong></td><td>IM, BDA</td></tr><tr><td><strong>Proces- en businessanalyse</strong></td><td>BDA, NCB</td></tr><tr><td><strong>Risicoanalyse</strong></td><td>NCB, team</td></tr><tr><td><strong>Conceptueel datamodel</strong></td><td>SDE, BDA</td></tr></tbody></table></div>
+<div data-render="overlap" data-activiteit="analyseren"></div>
+
 
 <h2 id="adviseren">2. Adviseren</h2>
 <p><em>Welke oplossing is het beste, en waarom?</em> Het team kiest samen met de klant een oplossingsrichting.</p>
@@ -53,9 +60,10 @@
 <p>Adviesrapport. Onderzoeken staan in losse onderzoeksdocumenten.</p>
 </div>
 <h3>Theorie en product per topic</h3>
-<div class="table-wrap"><table><thead><tr><th>Topic</th><th>Theorie</th><th>Product (hoofdstuk in het teamdocument)</th></tr></thead><tbody><tr><td><strong>BDA</strong></td><td>Knelpuntanalyse, procesverbetering, make-or-buy, stakeholders en alternatieven, MoSCoW</td><td>Selectiematrix, SOLL-procesmodel, onderbouwd advies</td></tr><tr><td><strong>SDE</strong></td><td>Onderzoek met DOT (bijv. keuze voor framework of database)</td><td>Onderbouwde technische keuzes</td></tr><tr><td><strong>IM</strong></td><td>Onderzoeksinzichten vertalen naar ontwerprichtingen</td><td>Concepten en designkeuzes</td></tr><tr><td><strong>IT</strong></td><td>Toegepast onderzoek (DOT), analyse van transportprotocollen</td><td>Protocolkeuze met onderbouwing</td></tr><tr><td><strong>NCB</strong></td><td>DOT, PPDIOO (Plan), vergelijken van platformen, kostenbeheer (FinOps)</td><td>Advies aan het management, functioneel ontwerp, veranderplan</td></tr></tbody></table></div>
+<div data-render="theorie" data-activiteit="adviseren"></div>
 <h3>Overlappende thema's</h3>
-<div class="table-wrap"><table><thead><tr><th>Overlappend thema</th><th>Topics</th></tr></thead><tbody><tr><td><strong>Praktijkgericht onderzoek (DOT)</strong></td><td>alle</td></tr><tr><td><strong>Alternatieven vergelijken en make-or-buy</strong></td><td>BDA, NCB</td></tr><tr><td><strong>Kosten en businesscase</strong></td><td>BDA, NCB</td></tr><tr><td><strong>Keuze voor communicatieprotocollen</strong></td><td>IT, NCB</td></tr><tr><td><strong>Van onderzoeksinzicht naar ontwerpkeuze</strong></td><td>IM, BDA</td></tr></tbody></table></div>
+<div data-render="overlap" data-activiteit="adviseren"></div>
+
 
 <h2 id="ontwerpen">3. Ontwerpen</h2>
 <p><em>Hoe ziet de oplossing eruit?</em> Het team legt de architectuur van de keten vast, met de interfaces en protocollen tussen de onderdelen.</p>
@@ -63,9 +71,10 @@
 <p>Ontwerpdocument. Onderzoeken staan in losse onderzoeksdocumenten.</p>
 </div>
 <h3>Theorie en product per topic</h3>
-<div class="table-wrap"><table><thead><tr><th>Topic</th><th>Theorie</th><th>Product (hoofdstuk in het teamdocument)</th></tr></thead><tbody><tr><td><strong>BDA</strong></td><td>Datamodellering, ontwerp van een informatiesysteem, low-res paper prototyping</td><td>Datamodel, conceptontwerp van het informatiesysteem</td></tr><tr><td><strong>SDE</strong></td><td>Gelaagde architectuur, OO-principes, SOLID, klassendiagram, relationeel databaseontwerp, wireframes</td><td>Technisch ontwerp en databaseontwerp</td></tr><tr><td><strong>IM</strong></td><td>Visual design (compositie, typografie, kleur, layout, GUI), stylescape, prototyping in Figma</td><td>Low-, mid- en hi-fi prototypes, stylescape</td></tr><tr><td><strong>IT</strong></td><td>Ontwerp voor C, C-modulestructuur, hardwarearchitectuur</td><td>Moduleontwerp, protocolbeschrijving en elektronicaschema</td></tr><tr><td><strong>NCB</strong></td><td>Infrastructuurontwerp, netwerksegmentatie, IP-plan, applicatiearchitectuur, cloudarchitectuur (landing zones)</td><td>Technisch ontwerp, high-level design, migratieplan</td></tr></tbody></table></div>
+<div data-render="theorie" data-activiteit="ontwerpen"></div>
 <h3>Overlappende thema's</h3>
-<div class="table-wrap"><table><thead><tr><th>Overlappend thema</th><th>Topics</th></tr></thead><tbody><tr><td><strong>Databaseontwerp</strong></td><td>SDE, BDA, NCB</td></tr><tr><td><strong>Wireframes en UI-ontwerp</strong></td><td>SDE, IM, BDA</td></tr><tr><td><strong>Architectuur (lagen, modules, applicatie, infrastructuur)</strong></td><td>SDE, IT, NCB</td></tr><tr><td><strong>Modelleren en documenteren (UML, BPMN, netwerkdiagrammen)</strong></td><td>SDE, IT, BDA, NCB</td></tr><tr><td><strong>Netwerkontwerp: IP-plan en segmentatie</strong></td><td>NCB, IT</td></tr><tr><td><strong>Ontwerpen met beveiliging (security by design)</strong></td><td>SDE, NCB</td></tr></tbody></table></div>
+<div data-render="overlap" data-activiteit="ontwerpen"></div>
+
 
 <h2 id="realiseren">4. Realiseren (bouwen en testen)</h2>
 <p><em>Bouwen, en aantonen dat het werkt en past bij wat de gebruiker nodig heeft.</em> Het team bouwt eerst een werkende basisketen en integreert en schaalt daarna op. Elke iteratie eindigt met een integratietest en een demo voor de klant.</p>
@@ -73,9 +82,10 @@
 <p>Realisatie- en testrapport. Onderzoeken staan in losse onderzoeksdocumenten.</p>
 </div>
 <h3>Theorie en product per topic</h3>
-<div class="table-wrap"><table><thead><tr><th>Topic</th><th>Theorie</th><th>Product (hoofdstuk in het teamdocument)</th></tr></thead><tbody><tr><td><strong>BDA</strong></td><td>SQL, Python/Pandas, Power Apps, low-code; validatie met eindgebruikers</td><td>Power Apps-prototype, factsheet met data-analyse, validatie op acceptatiecriteria</td></tr><tr><td><strong>SDE</strong></td><td>OOP, ASP.NET, Bootstrap, dependency injection, SQL, state management, foutafhandeling; unit tests, acceptatietests, debuggen</td><td>Webapplicatie met relationele database, uitgevoerde unit- en acceptatietests</td></tr><tr><td><strong>IM</strong></td><td>HTML, CSS, JavaScript, animaties, Three.js, PWA; usability testing, heuristische evaluatie, brand test</td><td>Interactieve front-end producten, testresultaten, verbeterde iteratie</td></tr><tr><td><strong>IT</strong></td><td>C (arrays, pointers, geheugen, linked lists, bitmanipulatie), interrupts, timers, sockets, elektronica; unit tests in C, meten met meetapparatuur</td><td>Werkende, geteste subsystemen met eigen circuit</td></tr><tr><td><strong>NCB</strong></td><td>Windows Server AD/DNS, Linux, DHCP/NAT/routing, firewalling, Python-scripting, Docker, Azure; infrastructuur en migratie testen</td><td>Ingerichte infrastructuur, uitgevoerde migratie, proof of concept</td></tr></tbody></table></div>
+<div data-render="theorie" data-activiteit="realiseren"></div>
 <h3>Overlappende thema's</h3>
-<div class="table-wrap"><table><thead><tr><th>Overlappend thema</th><th>Topics</th></tr></thead><tbody><tr><td><strong>HTML, CSS en JavaScript</strong></td><td>IM, SDE</td></tr><tr><td><strong>SQL en relationele databases</strong></td><td>SDE, BDA, NCB</td></tr><tr><td><strong>Python</strong></td><td>BDA, NCB</td></tr><tr><td><strong>Prototypes bouwen</strong></td><td>BDA, IM</td></tr><tr><td><strong>IP-adressering, DHCP en DNS</strong></td><td>IT, NCB</td></tr><tr><td><strong>Sockets en TCP/UDP</strong></td><td>IT, NCB</td></tr><tr><td><strong>Linux</strong></td><td>NCB, IT</td></tr><tr><td><strong>Containers (Docker)</strong></td><td>NCB, SDE</td></tr><tr><td><strong>Talstelsels (binair, hexadecimaal)</strong></td><td>IT, NCB</td></tr><tr><td><strong>Unit tests</strong></td><td>SDE, IT</td></tr><tr><td><strong>Testen met gebruikers en validatie</strong></td><td>IM, BDA, SDE</td></tr></tbody></table></div>
+<div data-render="overlap" data-activiteit="realiseren"></div>
+
 
 <h2 id="manage-control">5. Manage &amp; control</h2>
 <p><em>Hoe blijft het beheersbaar, veilig, van goede kwaliteit en verantwoord?</em> Het team spreekt een Git-strategie en Definition of Done af en draagt het product over aan de klant.</p>
@@ -83,9 +93,10 @@
 <p>Manage &amp; control-document. Onderzoeken staan in losse onderzoeksdocumenten.</p>
 </div>
 <h3>Theorie en product per topic</h3>
-<div class="table-wrap"><table><thead><tr><th>Topic</th><th>Theorie</th><th>Product (hoofdstuk in het teamdocument)</th></tr></thead><tbody><tr><td><strong>BDA</strong></td><td>Governance, RACI, KSF's en KPI's, businesscase, ethiek en data, AVG</td><td>RACI-matrix, KPI's, beheer- en privacyparagraaf</td></tr><tr><td><strong>SDE</strong></td><td>Git, versiebeheer, testplan, (geautomatiseerd) testen, iteratief verbeteren, deployment</td><td>Commit- en branchstrategie, testplan, deploymentbeschrijving</td></tr><tr><td><strong>IM</strong></td><td>Git (README, commits, commentaar in code), versiebeheer in groepen</td><td>Gestructureerde repository</td></tr><tr><td><strong>IT</strong></td><td>Codeerstandaard, testplan, Git</td><td>Testplan, verantwoording codekwaliteit</td></tr><tr><td><strong>NCB</strong></td><td>CI/CD, monitoring, ITIL (incident- en changemanagement), back-up en herstel, zero trust, security management, AVG, risicoanalyse</td><td>Beheerplan met monitoring, beveiligings- en continuïteitsmaatregelen</td></tr></tbody></table></div>
+<div data-render="theorie" data-activiteit="manage-control"></div>
 <h3>Overlappende thema's</h3>
-<div class="table-wrap"><table><thead><tr><th>Overlappend thema</th><th>Topics</th></tr></thead><tbody><tr><td><strong>Versiebeheer met Git</strong></td><td>SDE, IM, IT, NCB</td></tr><tr><td><strong>Testplan en testautomatisering</strong></td><td>SDE, IT</td></tr><tr><td><strong>CI/CD, DevOps en deployment</strong></td><td>NCB, SDE</td></tr><tr><td><strong>Security (applicatie, data, infrastructuur)</strong></td><td>NCB, SDE, BDA</td></tr><tr><td><strong>Privacy, ethiek en AVG</strong></td><td>BDA, NCB</td></tr><tr><td><strong>Monitoring en KPI's</strong></td><td>NCB, BDA</td></tr><tr><td><strong>Governance, RACI en servicemanagement</strong></td><td>BDA, NCB</td></tr><tr><td><strong>Codekwaliteit en codeerstandaarden</strong></td><td>SDE, IT, IM</td></tr></tbody></table></div>
+<div data-render="overlap" data-activiteit="manage-control"></div>
+
 
 <h2 id="professional-skills">Professional Skills</h2>
 <p>Professional skills lopen door alle vijf activiteiten heen en zijn voor elk topic gelijk. Ze vallen onder twee leeruitkomsten: Professional Standard en Personal Leadership.</p>
@@ -99,6 +110,7 @@
 <p>Je wordt <strong>individueel</strong> beoordeeld op de leeruitkomsten van je eigen topic. De groepsopdracht is de context; jouw eigen bijdrage aan de teamdocumenten, het product en de onderzoeken is bewijs in je portfolio.</p>
 </div>
 
+<script src="topics.js"></script>
 </main>
 </div>
 <footer class="site-footer"><div class="inner">Fontys ICT · Introductiesemester · Multisemester 2.</div></footer>

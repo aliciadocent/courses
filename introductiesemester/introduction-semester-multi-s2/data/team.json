@@ -1,0 +1,12 @@
+{
+  "code": "team",
+  "toelichting": "Thema's die het hele team samen oppakt, los van één topic.",
+  "activiteiten": {
+    "analyseren": {
+      "overlap": [
+        "Stakeholderanalyse",
+        "Risicoanalyse"
+      ]
+    }
+  }
+}

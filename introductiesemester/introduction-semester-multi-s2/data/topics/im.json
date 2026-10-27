@@ -1,0 +1,46 @@
+{
+  "code": "IM",
+  "naam": "Interactive Media",
+  "rol": "Gebruiker en interface: UX-onderzoek, visual design, front-end",
+  "activiteiten": {
+    "analyseren": {
+      "theorie": "UX-onderzoek: observatie, interviews/enquête, affinity mapping, persona, scenario, customer journey",
+      "product": "Research proposal en onderzoeksresultaten",
+      "overlap": [
+        "Gebruikersonderzoek, persona's en journey"
+      ]
+    },
+    "adviseren": {
+      "theorie": "Onderzoeksinzichten vertalen naar ontwerprichtingen",
+      "product": "Concepten en designkeuzes",
+      "overlap": [
+        "Praktijkgericht onderzoek (DOT)",
+        "Van onderzoeksinzicht naar ontwerpkeuze"
+      ]
+    },
+    "ontwerpen": {
+      "theorie": "Visual design (compositie, typografie, kleur, layout, GUI), stylescape, prototyping in Figma",
+      "product": "Low-, mid- en hi-fi prototypes, stylescape",
+      "overlap": [
+        "Wireframes en UI-ontwerp"
+      ]
+    },
+    "realiseren": {
+      "theorie": "HTML, CSS, JavaScript, animaties, Three.js, PWA; usability testing, heuristische evaluatie, brand test",
+      "product": "Interactieve front-end producten, testresultaten, verbeterde iteratie",
+      "overlap": [
+        "HTML, CSS en JavaScript",
+        "Prototypes bouwen",
+        "Testen met gebruikers en validatie"
+      ]
+    },
+    "manage-control": {
+      "theorie": "Git (README, commits, commentaar in code), versiebeheer in groepen",
+      "product": "Gestructureerde repository",
+      "overlap": [
+        "Versiebeheer met Git",
+        "Codekwaliteit en codeerstandaarden"
+      ]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "code": "BDA",
+  "naam": "Process Data in Organisations",
+  "rol": "Proces en data: procesanalyse, advies, data-analyse, prototype",
+  "activiteiten": {
+    "analyseren": {
+      "theorie": "Probleemanalyse, business process management, BPMN (IST), gebruikersanalyse",
+      "product": "Probleemanalyse, IST-procesmodel, persona's en journey, informatiebehoefte, beoordeelde datasets",
+      "overlap": [
+        "Requirements en user stories",
+        "Stakeholderanalyse",
+        "Gebruikersonderzoek, persona's en journey",
+        "Proces- en businessanalyse",
+        "Conceptueel datamodel"
+      ]
+    },
+    "adviseren": {
+      "theorie": "Knelpuntanalyse, procesverbetering, make-or-buy, stakeholders en alternatieven, MoSCoW",
+      "product": "Selectiematrix, SOLL-procesmodel, onderbouwd advies",
+      "overlap": [
+        "Praktijkgericht onderzoek (DOT)",
+        "Alternatieven vergelijken en make-or-buy",
+        "Kosten en businesscase",
+        "Van onderzoeksinzicht naar ontwerpkeuze"
+      ]
+    },
+    "ontwerpen": {
+      "theorie": "Datamodellering, ontwerp van een informatiesysteem, low-res paper prototyping",
+      "product": "Datamodel, conceptontwerp van het informatiesysteem",
+      "overlap": [
+        "Databaseontwerp",
+        "Wireframes en UI-ontwerp",
+        "Modelleren en documenteren (UML, BPMN, netwerkdiagrammen)"
+      ]
+    },
+    "realiseren": {
+      "theorie": "SQL, Python/Pandas, Power Apps, low-code; validatie met eindgebruikers",
+      "product": "Power Apps-prototype, factsheet met data-analyse, validatie op acceptatiecriteria",
+      "overlap": [
+        "SQL en relationele databases",
+        "Python",
+        "Prototypes bouwen",
+        "Testen met gebruikers en validatie"
+      ]
+    },
+    "manage-control": {
+      "theorie": "Governance, RACI, KSF's en KPI's, businesscase, ethiek en data, AVG",
+      "product": "RACI-matrix, KPI's, beheer- en privacyparagraaf",
+      "overlap": [
+        "Security (applicatie, data, infrastructuur)",
+        "Privacy, ethiek en AVG",
+        "Monitoring en KPI's",
+        "Governance, RACI en servicemanagement"
+      ]
+    }
+  }
+}

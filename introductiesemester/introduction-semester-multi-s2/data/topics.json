@@ -1,0 +1,10 @@
+{
+  "toelichting": "Volgorde van de topics op de pagina. Voeg een nieuw topic toe door hier de bestandsnaam (zonder .json) toe te voegen en een bestand in de map topics/ te maken.",
+  "topics": [
+    "im",
+    "bda",
+    "sde",
+    "it",
+    "ncb"
+  ]
+}

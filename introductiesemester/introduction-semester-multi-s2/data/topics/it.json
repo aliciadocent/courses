@@ -1,0 +1,52 @@
+{
+  "code": "IT",
+  "naam": "Intelligent Technologies",
+  "rol": "Apparaat, embedded systemen en communicatie tussen systemen",
+  "activiteiten": {
+    "analyseren": {
+      "theorie": "Systeemcontext, use cases, eigenschappen van sensoren en actuatoren",
+      "product": "Systeemcontext en eisen per subsysteem",
+      "overlap": [
+        "Requirements en user stories",
+        "Use cases"
+      ]
+    },
+    "adviseren": {
+      "theorie": "Toegepast onderzoek (DOT), analyse van transportprotocollen",
+      "product": "Protocolkeuze met onderbouwing",
+      "overlap": [
+        "Praktijkgericht onderzoek (DOT)",
+        "Keuze voor communicatieprotocollen"
+      ]
+    },
+    "ontwerpen": {
+      "theorie": "Ontwerp voor C, C-modulestructuur, hardwarearchitectuur",
+      "product": "Moduleontwerp, protocolbeschrijving en elektronicaschema",
+      "overlap": [
+        "Architectuur (lagen, modules, applicatie, infrastructuur)",
+        "Modelleren en documenteren (UML, BPMN, netwerkdiagrammen)",
+        "Netwerkontwerp: IP-plan en segmentatie"
+      ]
+    },
+    "realiseren": {
+      "theorie": "C (arrays, pointers, geheugen, linked lists, bitmanipulatie), interrupts, timers, sockets, elektronica; unit tests in C, meten met meetapparatuur",
+      "product": "Werkende, geteste subsystemen met eigen circuit",
+      "overlap": [
+        "IP-adressering, DHCP en DNS",
+        "Sockets en TCP/UDP",
+        "Linux",
+        "Talstelsels (binair, hexadecimaal)",
+        "Unit tests"
+      ]
+    },
+    "manage-control": {
+      "theorie": "Codeerstandaard, testplan, Git",
+      "product": "Testplan, verantwoording codekwaliteit",
+      "overlap": [
+        "Versiebeheer met Git",
+        "Testplan en testautomatisering",
+        "Codekwaliteit en codeerstandaarden"
+      ]
+    }
+  }
+}

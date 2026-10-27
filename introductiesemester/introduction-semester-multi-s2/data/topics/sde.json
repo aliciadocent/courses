@@ -1,0 +1,56 @@
+{
+  "code": "SDE",
+  "naam": "Software Design & Engineering",
+  "rol": "Applicatie en database",
+  "activiteiten": {
+    "analyseren": {
+      "theorie": "Functionele en niet-functionele requirements, use cases, conceptueel model (EER)",
+      "product": "Gevalideerde requirements en acceptatiecriteria",
+      "overlap": [
+        "Requirements en user stories",
+        "Use cases",
+        "Conceptueel datamodel"
+      ]
+    },
+    "adviseren": {
+      "theorie": "Onderzoek met DOT (bijv. keuze voor framework of database)",
+      "product": "Onderbouwde technische keuzes",
+      "overlap": [
+        "Praktijkgericht onderzoek (DOT)"
+      ]
+    },
+    "ontwerpen": {
+      "theorie": "Gelaagde architectuur, OO-principes, SOLID, klassendiagram, relationeel databaseontwerp, wireframes",
+      "product": "Technisch ontwerp en databaseontwerp",
+      "overlap": [
+        "Databaseontwerp",
+        "Wireframes en UI-ontwerp",
+        "Architectuur (lagen, modules, applicatie, infrastructuur)",
+        "Modelleren en documenteren (UML, BPMN, netwerkdiagrammen)",
+        "Ontwerpen met beveiliging (security by design)"
+      ]
+    },
+    "realiseren": {
+      "theorie": "OOP, ASP.NET, Bootstrap, dependency injection, SQL, state management, foutafhandeling; unit tests, acceptatietests, debuggen",
+      "product": "Webapplicatie met relationele database, uitgevoerde unit- en acceptatietests",
+      "overlap": [
+        "HTML, CSS en JavaScript",
+        "SQL en relationele databases",
+        "Containers (Docker)",
+        "Unit tests",
+        "Testen met gebruikers en validatie"
+      ]
+    },
+    "manage-control": {
+      "theorie": "Git, versiebeheer, testplan, (geautomatiseerd) testen, iteratief verbeteren, deployment",
+      "product": "Commit- en branchstrategie, testplan, deploymentbeschrijving",
+      "overlap": [
+        "Versiebeheer met Git",
+        "Testplan en testautomatisering",
+        "CI/CD, DevOps en deployment",
+        "Security (applicatie, data, infrastructuur)",
+        "Codekwaliteit en codeerstandaarden"
+      ]
+    }
+  }
+}

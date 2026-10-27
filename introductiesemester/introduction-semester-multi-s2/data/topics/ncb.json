@@ -1,0 +1,63 @@
+{
+  "code": "NCB",
+  "naam": "Network & Cloud Basics",
+  "rol": "Infrastructuur, beveiliging, automatisering en beheer",
+  "activiteiten": {
+    "analyseren": {
+      "theorie": "IT-businessanalyse, requirements- en stakeholderanalyse, PPDIOO (Prepare)",
+      "product": "Analyse van de huidige situatie en de eisen",
+      "overlap": [
+        "Requirements en user stories",
+        "Stakeholderanalyse",
+        "Proces- en businessanalyse",
+        "Risicoanalyse"
+      ]
+    },
+    "adviseren": {
+      "theorie": "DOT, PPDIOO (Plan), vergelijken van platformen, kostenbeheer (FinOps)",
+      "product": "Advies aan het management, functioneel ontwerp, veranderplan",
+      "overlap": [
+        "Praktijkgericht onderzoek (DOT)",
+        "Alternatieven vergelijken en make-or-buy",
+        "Kosten en businesscase",
+        "Keuze voor communicatieprotocollen"
+      ]
+    },
+    "ontwerpen": {
+      "theorie": "Infrastructuurontwerp, netwerksegmentatie, IP-plan, applicatiearchitectuur, cloudarchitectuur (landing zones)",
+      "product": "Technisch ontwerp, high-level design, migratieplan",
+      "overlap": [
+        "Databaseontwerp",
+        "Architectuur (lagen, modules, applicatie, infrastructuur)",
+        "Modelleren en documenteren (UML, BPMN, netwerkdiagrammen)",
+        "Netwerkontwerp: IP-plan en segmentatie",
+        "Ontwerpen met beveiliging (security by design)"
+      ]
+    },
+    "realiseren": {
+      "theorie": "Windows Server AD/DNS, Linux, DHCP/NAT/routing, firewalling, Python-scripting, Docker, Azure; infrastructuur en migratie testen",
+      "product": "Ingerichte infrastructuur, uitgevoerde migratie, proof of concept",
+      "overlap": [
+        "SQL en relationele databases",
+        "Python",
+        "IP-adressering, DHCP en DNS",
+        "Sockets en TCP/UDP",
+        "Linux",
+        "Containers (Docker)",
+        "Talstelsels (binair, hexadecimaal)"
+      ]
+    },
+    "manage-control": {
+      "theorie": "CI/CD, monitoring, ITIL (incident- en changemanagement), back-up en herstel, zero trust, security management, AVG, risicoanalyse",
+      "product": "Beheerplan met monitoring, beveiligings- en continuïteitsmaatregelen",
+      "overlap": [
+        "Versiebeheer met Git",
+        "CI/CD, DevOps en deployment",
+        "Security (applicatie, data, infrastructuur)",
+        "Privacy, ethiek en AVG",
+        "Monitoring en KPI's",
+        "Governance, RACI en servicemanagement"
+      ]
+    }
+  }
+}
